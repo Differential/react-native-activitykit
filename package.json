@@ -10,12 +10,10 @@
   "files": [
     "src",
     "lib",
-    "android",
     "ios",
     "cpp",
     "react-native-activitykit.podspec",
     "!lib/typescript/example",
-    "!android/build",
     "!ios/build",
     "!**/__tests__",
     "!**/__fixtures__",
@@ -32,8 +30,7 @@
   },
   "keywords": [
     "react-native",
-    "ios",
-    "android"
+    "ios"
   ],
   "repository": "https://github.com/Differential/react-native-activitykit",
   "author": "Differential Dev Shop <hello@differential.com> (https://github.com/Differential)",
