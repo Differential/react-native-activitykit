@@ -1,5 +1,5 @@
 {
-  "name": "react-native-activitykit",
+  "name": "@differential/react-native-activitykit",
   "version": "0.1.0",
   "description": "test",
   "main": "lib/commonjs/index",
@@ -12,7 +12,7 @@
     "lib",
     "ios",
     "cpp",
-    "react-native-activitykit.podspec",
+    "differential-react-native-activitykit.podspec",
     "!lib/typescript/example",
     "!ios/build",
     "!**/__tests__",
@@ -32,18 +32,17 @@
     "react-native",
     "ios"
   ],
-  "repository": "https://github.com/Differential/react-native-activitykit",
+  "repository": "https://github.com/differential/react-native-activitykit",
   "author": "Differential Dev Shop <hello@differential.com> (https://github.com/Differential)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Differential/react-native-activitykit/issues"
+    "url": "https://github.com/differential/react-native-activitykit/issues"
   },
-  "homepage": "https://github.com/Differential/react-native-activitykit#readme",
+  "homepage": "https://github.com/differential/react-native-activitykit#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@arkweid/lefthook": "^0.7.7",
     "@babel/eslint-parser": "^7.18.2",
     "@commitlint/config-conventional": "^17.0.2",
     "@react-native-community/eslint-config": "^3.0.2",

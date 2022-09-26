@@ -1,4 +1,4 @@
-package com.example.reactnativeactivitykit.newarchitecture.modules;
+package com.example.differentialreactnativeactivitykit.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

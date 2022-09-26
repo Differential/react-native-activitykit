@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-activitykit';
+import { multiply } from '@differential/react-native-activitykit';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();

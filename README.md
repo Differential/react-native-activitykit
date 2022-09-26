@@ -1,15 +1,15 @@
-# react-native-activitykit
-A React Native package for accessing Apple's ActivityKit to manage Activities used in Live Activities and the Dynamic Island.
+# @differential/react-native-activitykit
+A package for accessing Apple's ActivityKit Framework for managing Activities used in Live Activities and Dynamic Island.
 ## Installation
 
 ```sh
-npm install react-native-activitykit
+npm install @differential/react-native-activitykit
 ```
 
 ## Usage
 
 ```js
-import { multiply } from "react-native-activitykit";
+import { multiply } from "@differential/react-native-activitykit";
 
 // ...
 

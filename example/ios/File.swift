@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  ActivitykitExample
+//  ReactNativeActivitykitExample
 //
 
 import Foundation

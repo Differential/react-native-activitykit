@@ -1,4 +1,4 @@
-package com.example.reactnativeactivitykit.newarchitecture.components;
+package com.example.differentialreactnativeactivitykit.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

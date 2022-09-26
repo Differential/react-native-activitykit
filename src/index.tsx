@@ -1,20 +1,20 @@
 import { NativeModules, Platform } from 'react-native';
 
 const LINKING_ERROR =
-  `The package 'react-native-activitykit' doesn't seem to be linked. Make sure: \n\n` +
+  `The package '@differential/react-native-activitykit' doesn't seem to be linked. Make sure: \n\n` +
   Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const Activitykit = NativeModules.Activitykit  ? NativeModules.Activitykit  : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+const ReactNativeActivitykit = NativeModules.ReactNativeActivitykit ? NativeModules.ReactNativeActivitykit : new Proxy(
+  {},
+  {
+    get() {
+      throw new Error(LINKING_ERROR);
+    },
+  }
+);
 
 export function multiply(a: number, b: number): Promise<number> {
-  return Activitykit.multiply(a, b);
+  return ReactNativeActivitykit.multiply(a, b);
 }

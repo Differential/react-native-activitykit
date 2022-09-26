@@ -1,6 +1,6 @@
 {
-  "name": "react-native-activitykit-example",
-  "description": "Example app for react-native-activitykit",
+  "name": "@differential/react-native-activitykit-example",
+  "description": "Example app for @differential/react-native-activitykit",
   "version": "0.0.1",
   "private": true,
   "scripts": {

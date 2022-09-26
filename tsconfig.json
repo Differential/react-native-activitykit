@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-activitykit": ["./src/index"]
+      "@differential/react-native-activitykit": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

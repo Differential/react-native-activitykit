@@ -1,5 +1,5 @@
-@objc(Activitykit)
-class Activitykit: NSObject {
+@objc(ReactNativeActivitykit)
+class ReactNativeActivitykit: NSObject {
 
   @objc(multiply:withB:withResolver:withRejecter:)
   func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
