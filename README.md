@@ -1,5 +1,7 @@
 # react-native-activitykit
+
 hell
+
 ## Installation
 
 ```sh
@@ -9,7 +11,7 @@ npm install react-native-activitykit
 ## Usage
 
 ```js
-import { multiply } from "react-native-activitykit";
+import { multiply } from 'react-native-activitykit';
 
 // ...
 
