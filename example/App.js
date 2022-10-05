@@ -12,30 +12,45 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import ReactNativeActivityKit from 'react-native-activitykit';
 
-export default class App extends Component<{}> {
-  state = {
-    status: 'starting',
-    message: '--',
-  };
-  componentDidMount() {
-    ReactNativeActivityKit.sampleMethod('Testing', 123, message => {
-      this.setState({
-        status: 'native callback received',
-        message,
-      });
-    });
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>☆ReactNativeActivityKit example☆</Text>
-        <Text style={styles.instructions}>STATUS: {this.state.status}</Text>
-        <Text style={styles.welcome}>☆NATIVE CALLBACK MESSAGE☆</Text>
-        <Text style={styles.instructions}>{this.state.message}</Text>
-      </View>
-    );
-  }
-}
+// export default class App extends Component<{}> {
+//   state = {
+//     status: 'starting',
+//     message: '--',
+//   };
+//   componentDidMount() {
+//     ReactNativeActivityKit.sampleMethod('Testing', 123, message => {
+//       this.setState({
+//         status: 'native callback received',
+//         message,
+//       });
+//     });
+//   }
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <Text style={styles.welcome}>☆ReactNativeActivityKit example☆</Text>
+//         <Text style={styles.instructions}>STATUS: {this.state.status}</Text>
+//         <Text style={styles.welcome}>☆NATIVE CALLBACK MESSAGE☆</Text>
+//         <Text style={styles.instructions}>{this.state.message}</Text>
+//       </View>
+//     );
+//   }
+// }
+
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcome}>ReactNativeActivityKit</Text>
+      <Text style={styles.instructions}>
+        {ReactNativeActivityKit.helloThere()}
+      </Text>
+      {/* <Text style={styles.welcome}>☆NATIVE CALLBACK MESSAGE☆</Text> */}
+      {/* <Text style={styles.instructions}>{this.state.message}</Text> */}
+    </View>
+  );
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
