@@ -7,8 +7,9 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "pods": "pod-install --quiet",
-    "postinstall": "patch-package"
+    "pods": "(bundle install && cd ios && bundle exec pod install --repo-update)",
+    "postinstall": "jetifier && yarn pods && patch-package",
+    "post-install": "yarn postinstall"
   },
   "dependencies": {
     "react": "17.0.2",
@@ -18,6 +19,7 @@
     "@babel/core": "^7.12.10",
     "@babel/runtime": "^7.12.5",
     "babel-plugin-module-resolver": "^4.1.0",
+    "jetifier": "^2.0.0",
     "metro-react-native-babel-preset": "^0.67.0",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0"
