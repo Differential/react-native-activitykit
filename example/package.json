@@ -7,9 +7,12 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "jetify && yarn pods",
+    "pods": "(bundle install && cd ios && bundle exec pod install --repo-update)"
   },
   "dependencies": {
+    "jetifier": "^2.0.0",
     "react": "18.1.0",
     "react-native": "0.70.2",
     "react-native-activitykit": "link:../"

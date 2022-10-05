@@ -4145,6 +4145,11 @@ jest@^26.6.3:
     import-local "^3.0.2"
     jest-cli "^26.6.3"
 
+jetifier@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/jetifier/-/jetifier-2.0.0.tgz#699391367ca1fe7bc4da5f8bf691eb117758e4cb"
+  integrity sha512-J4Au9KuT74te+PCCCHKgAjyLlEa+2VyIAEPNCdE5aNkAJ6FAJcAqcdzEkSnzNksIa9NkGmC4tPiClk2e7tCJuQ==
+
 joi@^17.2.1:
   version "17.6.2"
   resolved "https://registry.yarnpkg.com/joi/-/joi-17.6.2.tgz#00ac55ce6495596545cce45309f38738cfbd7cd3"
