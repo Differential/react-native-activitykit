@@ -1,14 +1,16 @@
-#import <React/RCTBridgeModule.h>
+// ReactNativeActivityKit.m
 
-@interface RCT_EXTERN_MODULE(ReactNativeActivitykit, NSObject)
+#import "ReactNativeActivityKit.h"
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
 
-+ (BOOL)requiresMainQueueSetup
+@implementation ReactNativeActivityKit
+
+RCT_EXPORT_MODULE()
+
+RCT_EXPORT_METHOD(sampleMethod:(NSString *)stringArgument numberParameter:(nonnull NSNumber *)numberArgument callback:(RCTResponseSenderBlock)callback)
 {
-  return NO;
+    // TODO: Implement some actually useful functionality
+    callback(@[[NSString stringWithFormat: @"numberArgument: %@ stringArgument: %@", numberArgument, stringArgument]]);
 }
 
 @end
