@@ -11,7 +11,7 @@
     "react-native-activitykit.podspec"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test specified\""
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,8 @@
     "react-native"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "Differential",
+    "email": "hello@differential.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",
