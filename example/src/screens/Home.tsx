@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { Button } from 'react-native-nucleus-ui';
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import { selectMenuCategory } from '../reducers/actions';
-import { OrderState } from '../reducers/order';
+import type { OrderState } from '../reducers/order';
 
 const styles = StyleSheet.create({
   container: {
@@ -39,6 +41,7 @@ const Home: React.FC = () => {
     <View style={styles.container}>
       <View></View>
       <Text>Result: {result}</Text>
+      <Button title="Login" size="large" />
     </View>
   );
 };
