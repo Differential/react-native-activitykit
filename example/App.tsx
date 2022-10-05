@@ -8,34 +8,9 @@
  * https://github.com/facebook/react-native
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import ReactNativeActivityKit from 'react-native-activitykit';
-
-export default class App extends Component<{}> {
-  state = {
-    status: 'starting',
-    message: '--',
-  };
-  componentDidMount() {
-    ReactNativeActivityKit.sampleMethod('Testing', 123, message => {
-      this.setState({
-        status: 'native callback received',
-        message,
-      });
-    });
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>☆ReactNativeActivityKit example☆</Text>
-        <Text style={styles.instructions}>STATUS: {this.state.status}</Text>
-        <Text style={styles.welcome}>☆NATIVE CALLBACK MESSAGE☆</Text>
-        <Text style={styles.instructions}>{this.state.message}</Text>
-      </View>
-    );
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -55,3 +30,35 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+type AppState = {
+  status: string;
+  message: string;
+};
+
+export default class App extends Component<{}> {
+  state: AppState = {
+    status: 'starting',
+    message: '--',
+  };
+
+  componentDidMount() {
+    ReactNativeActivityKit.sampleMethod('Testing', 123, (message: string) => {
+      this.setState({
+        status: 'native callback received',
+        message,
+      });
+    });
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>☆ReactNativeActivityKit example☆</Text>
+        <Text style={styles.instructions}>STATUS: {this.state.status}</Text>
+        <Text style={styles.welcome}>'☆NATIVE CALLBACK MESSAGE☆'</Text>
+        <Text style={styles.instructions}>{this.state.message}</Text>
+      </View>
+    );
+  }
+}

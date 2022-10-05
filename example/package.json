@@ -9,7 +9,8 @@
     "test": "jest",
     "lint": "eslint .",
     "postinstall": "jetify && yarn pods",
-    "pods": "(bundle install && cd ios && bundle exec pod install --repo-update)"
+    "pods": "(bundle install && cd ios && bundle exec pod install --repo-update)",
+    "prettier": "prettier --write '*.js,*.ts,*.jsx,*.tsx'"
   },
   "dependencies": {
     "jetifier": "^2.0.0",
@@ -21,11 +22,20 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@types/jest": "^29.1.1",
+    "@types/react-native": "^0.70.4",
+    "@types/react-test-renderer": "^18.0.0",
+    "@types/react": "^18.0.21",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "@typescript-eslint/types": "^3.10.1",
+    "@typescript-eslint/visitor-keys": "^3.10.1",
     "babel-jest": "^26.6.3",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.72.3",
-    "react-test-renderer": "18.1.0"
+    "react-test-renderer": "18.1.0",
+    "typescript": "^4.8.4"
   },
   "jest": {
     "preset": "react-native"
