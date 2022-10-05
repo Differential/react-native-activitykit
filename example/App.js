@@ -8,20 +8,20 @@
  * https://github.com/facebook/react-native
  */
 
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import ReactNativeActivityKit from 'react-native-activitykit';
 
 export default class App extends Component<{}> {
   state = {
     status: 'starting',
-    message: '--'
+    message: '--',
   };
   componentDidMount() {
-    ReactNativeActivityKit.sampleMethod('Testing', 123, (message) => {
+    ReactNativeActivityKit.sampleMethod('Testing', 123, message => {
       this.setState({
         status: 'native callback received',
-        message
+        message,
       });
     });
   }
