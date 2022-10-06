@@ -233,12 +233,12 @@
 		53A004C928EF329E00AD8FEA /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				53A004D428EF352C00AD8FEA /* TitleView.swift */,
 				53A004CA28EF32DF00AD8FEA /* DeliveryStatusProgressBarView.swift */,
 				53A004CC28EF338700AD8FEA /* OrderStatusIndicatorView.swift */,
 				53A004CE28EF341A00AD8FEA /* DashView.swift */,
 				53A004D028EF345900AD8FEA /* ProgressBarView.swift */,
 				53A004D228EF348600AD8FEA /* ArrivalTimeView.swift */,
-				53A004D428EF352C00AD8FEA /* TitleView.swift */,
 				53A004D628EF375D00AD8FEA /* typefaces.swift */,
 			);
 			path = ui;
