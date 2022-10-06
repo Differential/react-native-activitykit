@@ -40,6 +40,7 @@ struct ReactNativeActivityKitExampleWidget: Widget {
           DynamicIslandExpandedRegion(.leading) {
             TitleView(orderStatus: orderStatus)
               .padding(16)
+              .preferredColorScheme(.dark)
           }
 
           DynamicIslandExpandedRegion(.trailing) {
@@ -47,19 +48,46 @@ struct ReactNativeActivityKitExampleWidget: Widget {
                             arrivalRangeStart: context.state.arrivalRangeStart,
                             arrivalRangeEnd: context.state.arrivalRangeEnd)
               .padding(16)
+              .preferredColorScheme(.dark)
           }
 
           DynamicIslandExpandedRegion(.bottom) {
             DeliveryStatusProgressBarView(orderStatus: orderStatus)
               .padding(16)
+              .preferredColorScheme(.dark)
           }
         } compactLeading: {
-          Text("Compact Leading")
+          if orderStatus == .delivering {
+            return Image(systemName: "knife.fork")
+              .foregroundColor(Color("Saucy"))
+              .preferredColorScheme(.dark)
+          } else if orderStatus == .completed {
+            return Image(systemName: "knife.fork")
+              .foregroundColor(Color("Saucy"))
+              .preferredColorScheme(.dark)
+          } else {
+            return Image(systemName: "knife.fork")
+              .foregroundColor(Color("Saucy"))
+              .preferredColorScheme(.dark)
+          }
         } compactTrailing: {
-          Text("Compact Trailing")
+          Text(orderStatus.rawValue)
+            .foregroundColor(Color("Saucy"))
+            .preferredColorScheme(.dark)
         } minimal: {
-          Image(systemName: systemImage)
-            .foregroundColor(foregroundColor())
+          if orderStatus == .delivering {
+            return Image(systemName: "knife.fork")
+              .foregroundColor(Color("Saucy"))
+              .preferredColorScheme(.dark)
+          } else if orderStatus == .completed {
+            return Image(systemName: "knife.fork")
+              .foregroundColor(Color("Saucy"))
+              .preferredColorScheme(.dark)
+          } else {
+            return Image(systemName: "knife.fork")
+              .foregroundColor(Color("Saucy"))
+              .preferredColorScheme(.dark)
+          }
         }
         .keylineTint(.yellow)
       }

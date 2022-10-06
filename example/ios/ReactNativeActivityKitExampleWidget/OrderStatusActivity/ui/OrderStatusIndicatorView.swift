@@ -15,9 +15,9 @@ struct OrderStatusIndicatorView: View {
     VStack {
       Image(systemName: systemImage)
         .font(.system(size: 10))
-        .foregroundColor(foregroundColor())
+        .foregroundColor(foregroundColor)
     }.frame(width: size, height: size)
-      .background(backgroundColor())
+      .background(backgroundColor)
       .clipShape(Circle())
   }
   
@@ -26,17 +26,17 @@ struct OrderStatusIndicatorView: View {
       return isActive ? 24 : 20
     }
   }
-//
-//  private func size() -> CGFloat {
-//    return self.isActive ? 24 : 20
-//  }
   
-  private func backgroundColor() -> Color {
-    return self.isActive ? Color("OrderStatusIndicatorActive") :Color("OrderStatusIndicatorInactive")
+  var backgroundColor: Color {
+    get {
+      return self.isActive ? Color("OrderStatusIndicatorActive") : Color("OrderStatusIndicatorInactive")
+    }
   }
   
-  private func foregroundColor() -> Color {
-    return self.isActive ? Color("OrderStatusForegroundActive") :Color("OrderStatusForegroundInactive")
+  var foregroundColor: Color {
+    get {
+      return self.isActive ? Color("OrderStatusForegroundActive") : Color("OrderStatusForegroundInactive")
+    }
   }
 }
 
