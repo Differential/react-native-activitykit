@@ -11,7 +11,6 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import { Button } from 'react-native-nucleus-ui';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { RootStackParamList } from './RootStackParamList';
 
@@ -77,11 +76,9 @@ const Home = () => {
         renderItem={({ item }) => renderPizza({ item, navigation })}
         numColumns={2}
       />
-      <Button
-        title="Login"
-        size="large"
-        onPress={() => navigation.navigate('Order')}
-      />
+      <TouchableOpacity onPress={() => navigation.navigate('Order')}>
+        <Text>{'Login'}</Text>
+      </TouchableOpacity>
     </View>
   );
 };

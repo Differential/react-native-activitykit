@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Button, Chip, Icon, PageControls } from 'react-native-nucleus-ui';
 
 const styles = StyleSheet.create({
   container: {
@@ -34,8 +33,7 @@ const Pizza = ({ _id, title }: PizzaProps) => {
   return (
     <View style={styles.container}>
       <Text>{title}</Text>
-
-      <Button title="Order" size="large" />
+      {/* <Button title="Order" size="large" />
       {options.map((option) => (
         <Button
           title=""
@@ -45,7 +43,7 @@ const Pizza = ({ _id, title }: PizzaProps) => {
           icon={'check'}
           onPress={() => null}
         />
-      ))}
+      ))} */}
     </View>
   );
 };
