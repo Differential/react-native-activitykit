@@ -1,6 +1,5 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Button, Chip, Icon, PageControls } from 'react-native-nucleus-ui';
 
 const styles = StyleSheet.create({
   container: {
@@ -16,14 +15,33 @@ const styles = StyleSheet.create({
 });
 
 const Order = () => {
-  const [checkedOptions, setCheckedOptions] = useState([])
-  const options = ['spinich', 'tomato', 'mushrooms', 'garlic', 'super saucy', 'extra cheezy']
+  const [checkedOptions, setCheckedOptions] = useState([]);
+  const options = [
+    'spinich',
+    'tomato',
+    'mushrooms',
+    'garlic',
+    'super saucy',
+    'extra cheezy',
+  ];
   const result = 'You Made It To The Order Page!';
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
+      {/* <TouchableOpacity onPress={() => navigation.navigate('Order')}>
+        <Text>{'Order'}</Text>
+      </TouchableOpacity>
       <Button title="Order" size="large" />
-      {options.map((option)=>(<Button title="" style={{backgroundColor: checkedOptions.includes(option) ? 'red' : 'green'}} icon={'check'} onPress={()=>null} />))}
+      {options.map((option) => (
+        <Button
+          title=""
+          style={{
+            backgroundColor: checkedOptions.includes(option) ? 'red' : 'green',
+          }}
+          icon={'check'}
+          onPress={() => null}
+        />
+      ))} */}
     </View>
   );
 };
