@@ -19,7 +19,7 @@
     "react-native-nucleus-ui": "^0.3.0",
     "react-native-safe-area-context": "^4.4.1",
     "react-native-screens": "^3.18.0",
-    "react-redux": "^8.0.4",
+    "react-redux": "^7.0.0",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1"
