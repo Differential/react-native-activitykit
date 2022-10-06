@@ -9,41 +9,59 @@ import ActivityKit
 import SwiftUI
 import WidgetKit
 
+func stringToOrderStatus(_ str: String) -> OrderStatus {
+  if str == "delivering" {
+    return .delivering
+  }
+  
+  if str == "completed" {
+    return .completed
+  }
+  
+  return .preparing
+}
+
 @main
 struct ReactNativeActivityKitExampleWidget: Widget {
     let kind: String = "ReactNativeActivityKitExampleWidget"
 
     var body: some WidgetConfiguration {
       ActivityConfiguration(for: OrderStatusActivityAttributes.self) { context in
-            Text("hello there!")
-//        OrderStatusLiveActivityView(arrivalRangeStart: context.state.arrivalRangeStart,
-//                                    arrivalRangeEnd: context.state.arrivalRangeEnd)
+        let orderStatus = stringToOrderStatus(context.state.status)
+        
+        OrderStatusLiveActivityView(arrivalRangeStart: context.state.arrivalRangeStart,
+                                    arrivalRangeEnd: context.state.arrivalRangeEnd,
+                                    orderStatus: orderStatus)
       } dynamicIsland: { context in
-          DynamicIsland {
-              // Create the expanded view.
-              DynamicIslandExpandedRegion(.leading) {
-                  Text("Leading")
-              }
-              
-              DynamicIslandExpandedRegion(.trailing) {
-                Text("Trailing")
-              }
-              
-              DynamicIslandExpandedRegion(.center) {
-                Text("Center")
-              }
-              
-              DynamicIslandExpandedRegion(.bottom) {
-                Text("Bottom")
-              }
-          } compactLeading: {
-              Text("Compact Leading")
-          } compactTrailing: {
-            Text("Compact Trailing")
-          } minimal: {
-            Text("Min")
+        let orderStatus = stringToOrderStatus(context.state.status)
+        
+        return DynamicIsland {
+          // Create the expanded view.
+          DynamicIslandExpandedRegion(.leading) {
+            TitleView(orderStatus: orderStatus)
+              .padding(16)
           }
-          .keylineTint(.yellow)
+
+          DynamicIslandExpandedRegion(.trailing) {
+            ArrivalTimeView(label: "Arrives",
+                            arrivalRangeStart: context.state.arrivalRangeStart,
+                            arrivalRangeEnd: context.state.arrivalRangeEnd)
+              .padding(16)
+          }
+
+          DynamicIslandExpandedRegion(.bottom) {
+            DeliveryStatusProgressBarView(orderStatus: orderStatus)
+              .padding(16)
+          }
+        } compactLeading: {
+          Text("Compact Leading")
+        } compactTrailing: {
+          Text("Compact Trailing")
+        } minimal: {
+          Image(systemName: systemImage)
+            .foregroundColor(foregroundColor())
+        }
+        .keylineTint(.yellow)
       }
     }
 }
