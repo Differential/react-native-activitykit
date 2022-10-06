@@ -11,12 +11,86 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		3411D3BF4B4D44BBAADAF52B /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BB47D188A34413893F5EF4B /* Inter-Regular.ttf */; };
-		518E776AE22546378E96CC16 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A951D07739B148B1A10A19BC /* Inter-Medium.ttf */; };
+		532F976E28EE367B00004362 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532F976D28EE367B00004362 /* WidgetKit.framework */; };
+		532F977028EE367B00004362 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532F976F28EE367B00004362 /* SwiftUI.framework */; };
+		532F977328EE367B00004362 /* ReactNativeActivityKitExampleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F977228EE367B00004362 /* ReactNativeActivityKitExampleWidget.swift */; };
+		532F977528EE367C00004362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532F977428EE367C00004362 /* Assets.xcassets */; };
+		532F977928EE367C00004362 /* ReactNativeActivityKitExampleWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 532F976C28EE367B00004362 /* ReactNativeActivityKitExampleWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		532F977F28EE371900004362 /* OrderStatusActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F977E28EE371900004362 /* OrderStatusActivityAttributes.swift */; };
+		532F978228EE387500004362 /* OrderStatusLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F978128EE387500004362 /* OrderStatusLiveActivityView.swift */; };
+		53A004A228EE42F900AD8FEA /* Apercu-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049028EE42F900AD8FEA /* Apercu-Bold.otf */; };
+		53A004A328EE42F900AD8FEA /* Apercu-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049028EE42F900AD8FEA /* Apercu-Bold.otf */; };
+		53A004A428EE42F900AD8FEA /* Apercu-Pro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049128EE42F900AD8FEA /* Apercu-Pro-Italic.otf */; };
+		53A004A528EE42F900AD8FEA /* Apercu-Pro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049128EE42F900AD8FEA /* Apercu-Pro-Italic.otf */; };
+		53A004A628EE42F900AD8FEA /* Apercu-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049228EE42F900AD8FEA /* Apercu-Light.otf */; };
+		53A004A728EE42F900AD8FEA /* Apercu-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049228EE42F900AD8FEA /* Apercu-Light.otf */; };
+		53A004A828EE42F900AD8FEA /* Apercu-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049328EE42F900AD8FEA /* Apercu-Medium.otf */; };
+		53A004A928EE42F900AD8FEA /* Apercu-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049328EE42F900AD8FEA /* Apercu-Medium.otf */; };
+		53A004AA28EE42F900AD8FEA /* Apercu-Pro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049428EE42F900AD8FEA /* Apercu-Pro-Bold.otf */; };
+		53A004AB28EE42F900AD8FEA /* Apercu-Pro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049428EE42F900AD8FEA /* Apercu-Pro-Bold.otf */; };
+		53A004AC28EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049528EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf */; };
+		53A004AD28EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049528EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf */; };
+		53A004AE28EE42F900AD8FEA /* Apercu-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049628EE42F900AD8FEA /* Apercu-Italic.otf */; };
+		53A004AF28EE42F900AD8FEA /* Apercu-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049628EE42F900AD8FEA /* Apercu-Italic.otf */; };
+		53A004B028EE42F900AD8FEA /* Apercu-Pro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049728EE42F900AD8FEA /* Apercu-Pro-Regular.otf */; };
+		53A004B128EE42F900AD8FEA /* Apercu-Pro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049728EE42F900AD8FEA /* Apercu-Pro-Regular.otf */; };
+		53A004B228EE42F900AD8FEA /* Apercu-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049828EE42F900AD8FEA /* Apercu-Bold-Italic.otf */; };
+		53A004B328EE42F900AD8FEA /* Apercu-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049828EE42F900AD8FEA /* Apercu-Bold-Italic.otf */; };
+		53A004B428EE42F900AD8FEA /* Apercu-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049928EE42F900AD8FEA /* Apercu-Regular.otf */; };
+		53A004B528EE42F900AD8FEA /* Apercu-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049928EE42F900AD8FEA /* Apercu-Regular.otf */; };
+		53A004B628EE42F900AD8FEA /* Apercu-Pro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049A28EE42F900AD8FEA /* Apercu-Pro-Medium.otf */; };
+		53A004B728EE42F900AD8FEA /* Apercu-Pro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049A28EE42F900AD8FEA /* Apercu-Pro-Medium.otf */; };
+		53A004B828EE42F900AD8FEA /* Apercu-Pro-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049B28EE42F900AD8FEA /* Apercu-Pro-Mono.otf */; };
+		53A004B928EE42F900AD8FEA /* Apercu-Pro-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049B28EE42F900AD8FEA /* Apercu-Pro-Mono.otf */; };
+		53A004BA28EE42F900AD8FEA /* Apercu-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049C28EE42F900AD8FEA /* Apercu-Light-Italic.otf */; };
+		53A004BB28EE42F900AD8FEA /* Apercu-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049C28EE42F900AD8FEA /* Apercu-Light-Italic.otf */; };
+		53A004BC28EE42F900AD8FEA /* Apercu-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049D28EE42F900AD8FEA /* Apercu-Mono.otf */; };
+		53A004BD28EE42F900AD8FEA /* Apercu-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049D28EE42F900AD8FEA /* Apercu-Mono.otf */; };
+		53A004BE28EE42F900AD8FEA /* Apercu-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049E28EE42F900AD8FEA /* Apercu-Medium-Italic.otf */; };
+		53A004BF28EE42F900AD8FEA /* Apercu-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049E28EE42F900AD8FEA /* Apercu-Medium-Italic.otf */; };
+		53A004C028EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049F28EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf */; };
+		53A004C128EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049F28EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf */; };
+		53A004C228EE42F900AD8FEA /* Apercu-Pro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004A028EE42F900AD8FEA /* Apercu-Pro-Light.otf */; };
+		53A004C328EE42F900AD8FEA /* Apercu-Pro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004A028EE42F900AD8FEA /* Apercu-Pro-Light.otf */; };
+		53A004C428EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004A128EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf */; };
+		53A004C528EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004A128EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf */; };
+		53A004C728EE451D00AD8FEA /* Analog-Script-Clean.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004C628EE451D00AD8FEA /* Analog-Script-Clean.otf */; };
+		53A004C828EE451D00AD8FEA /* Analog-Script-Clean.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004C628EE451D00AD8FEA /* Analog-Script-Clean.otf */; };
+		53A004CB28EF32DF00AD8FEA /* DeliveryStatusProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004CA28EF32DF00AD8FEA /* DeliveryStatusProgressBarView.swift */; };
+		53A004CD28EF338700AD8FEA /* OrderStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004CC28EF338700AD8FEA /* OrderStatusIndicatorView.swift */; };
+		53A004CF28EF341A00AD8FEA /* DashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004CE28EF341A00AD8FEA /* DashView.swift */; };
+		53A004D128EF345900AD8FEA /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004D028EF345900AD8FEA /* ProgressBarView.swift */; };
+		53A004D328EF348600AD8FEA /* ArrivalTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004D228EF348600AD8FEA /* ArrivalTimeView.swift */; };
+		53A004D528EF352C00AD8FEA /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004D428EF352C00AD8FEA /* TitleView.swift */; };
+		53A004D728EF375D00AD8FEA /* typefaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004D628EF375D00AD8FEA /* typefaces.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8B0F529A668845AB9A2D739F /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AECE793FE7954C19B6A781A8 /* Feather.ttf */; };
 		D8EB83CD17B74D119B35D49F /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F53904BF6569477BBF686462 /* Inter-Bold.ttf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		532F977728EE367C00004362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 532F976B28EE367B00004362;
+			remoteInfo = ReactNativeActivityKitExampleWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		532F977A28EE367C00004362 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				532F977928EE367C00004362 /* ReactNativeActivityKitExampleWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		13B07F961A680F5B00A75B9A /* ReactNativeActivityKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactNativeActivityKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +100,40 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactNativeActivityKitExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeActivityKitExample/main.m; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-ReactNativeActivityKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeActivityKitExample.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeActivityKitExample/Pods-ReactNativeActivityKitExample.debug.xcconfig"; sourceTree = "<group>"; };
+		532F976C28EE367B00004362 /* ReactNativeActivityKitExampleWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ReactNativeActivityKitExampleWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		532F976D28EE367B00004362 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		532F976F28EE367B00004362 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		532F977228EE367B00004362 /* ReactNativeActivityKitExampleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNativeActivityKitExampleWidget.swift; sourceTree = "<group>"; };
+		532F977428EE367C00004362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		532F977628EE367C00004362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		532F977E28EE371900004362 /* OrderStatusActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusActivityAttributes.swift; sourceTree = "<group>"; };
+		532F978128EE387500004362 /* OrderStatusLiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusLiveActivityView.swift; sourceTree = "<group>"; };
+		53A0049028EE42F900AD8FEA /* Apercu-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Bold.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Bold.otf"; sourceTree = "<group>"; };
+		53A0049128EE42F900AD8FEA /* Apercu-Pro-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Italic.otf"; sourceTree = "<group>"; };
+		53A0049228EE42F900AD8FEA /* Apercu-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Light.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Light.otf"; sourceTree = "<group>"; };
+		53A0049328EE42F900AD8FEA /* Apercu-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Medium.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Medium.otf"; sourceTree = "<group>"; };
+		53A0049428EE42F900AD8FEA /* Apercu-Pro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Bold.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Bold.otf"; sourceTree = "<group>"; };
+		53A0049528EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Medium-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Medium-Italic.otf"; sourceTree = "<group>"; };
+		53A0049628EE42F900AD8FEA /* Apercu-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Italic.otf"; sourceTree = "<group>"; };
+		53A0049728EE42F900AD8FEA /* Apercu-Pro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Regular.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Regular.otf"; sourceTree = "<group>"; };
+		53A0049828EE42F900AD8FEA /* Apercu-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Bold-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Bold-Italic.otf"; sourceTree = "<group>"; };
+		53A0049928EE42F900AD8FEA /* Apercu-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Regular.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Regular.otf"; sourceTree = "<group>"; };
+		53A0049A28EE42F900AD8FEA /* Apercu-Pro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Medium.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Medium.otf"; sourceTree = "<group>"; };
+		53A0049B28EE42F900AD8FEA /* Apercu-Pro-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Mono.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Mono.otf"; sourceTree = "<group>"; };
+		53A0049C28EE42F900AD8FEA /* Apercu-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Light-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Light-Italic.otf"; sourceTree = "<group>"; };
+		53A0049D28EE42F900AD8FEA /* Apercu-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Mono.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Mono.otf"; sourceTree = "<group>"; };
+		53A0049E28EE42F900AD8FEA /* Apercu-Medium-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Medium-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Medium-Italic.otf"; sourceTree = "<group>"; };
+		53A0049F28EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Light-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Light-Italic.otf"; sourceTree = "<group>"; };
+		53A004A028EE42F900AD8FEA /* Apercu-Pro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Light.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Light.otf"; sourceTree = "<group>"; };
+		53A004A128EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Bold-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Bold-Italic.otf"; sourceTree = "<group>"; };
+		53A004C628EE451D00AD8FEA /* Analog-Script-Clean.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Analog-Script-Clean.otf"; path = "../../../../../../Downloads/Analog_Script/Analog-Script-Clean.otf"; sourceTree = "<group>"; };
+		53A004CA28EF32DF00AD8FEA /* DeliveryStatusProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryStatusProgressBarView.swift; sourceTree = "<group>"; };
+		53A004CC28EF338700AD8FEA /* OrderStatusIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusIndicatorView.swift; sourceTree = "<group>"; };
+		53A004CE28EF341A00AD8FEA /* DashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashView.swift; sourceTree = "<group>"; };
+		53A004D028EF345900AD8FEA /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		53A004D228EF348600AD8FEA /* ArrivalTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalTimeView.swift; sourceTree = "<group>"; };
+		53A004D428EF352C00AD8FEA /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		53A004D628EF375D00AD8FEA /* typefaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = typefaces.swift; sourceTree = "<group>"; };
 		4BB47D188A34413893F5EF4B /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../node_modules/react-native-nucleus-ui/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-ReactNativeActivityKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeActivityKitExample.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeActivityKitExample/Pods-ReactNativeActivityKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-ReactNativeActivityKitExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeActivityKitExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +150,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-ReactNativeActivityKitExample.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		532F976928EE367B00004362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532F977028EE367B00004362 /* SwiftUI.framework in Frameworks */,
+				532F976E28EE367B00004362 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +195,71 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-ReactNativeActivityKitExample.a */,
+				532F976D28EE367B00004362 /* WidgetKit.framework */,
+				532F976F28EE367B00004362 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		532F977128EE367B00004362 /* ReactNativeActivityKitExampleWidget */ = {
+			isa = PBXGroup;
+			children = (
+				532F978028EE381C00004362 /* OrderStatusActivity */,
+				532F977228EE367B00004362 /* ReactNativeActivityKitExampleWidget.swift */,
+				532F977428EE367C00004362 /* Assets.xcassets */,
+				532F977628EE367C00004362 /* Info.plist */,
+				532F977E28EE371900004362 /* OrderStatusActivityAttributes.swift */,
+			);
+			path = ReactNativeActivityKitExampleWidget;
+			sourceTree = "<group>";
+		};
+		532F978028EE381C00004362 /* OrderStatusActivity */ = {
+			isa = PBXGroup;
+			children = (
+				53A004C928EF329E00AD8FEA /* ui */,
+				532F978128EE387500004362 /* OrderStatusLiveActivityView.swift */,
+			);
+			path = OrderStatusActivity;
+			sourceTree = "<group>";
+		};
+		53A0048F28EE42D200AD8FEA /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				53A004C628EE451D00AD8FEA /* Analog-Script-Clean.otf */,
+				53A0049828EE42F900AD8FEA /* Apercu-Bold-Italic.otf */,
+				53A0049028EE42F900AD8FEA /* Apercu-Bold.otf */,
+				53A0049628EE42F900AD8FEA /* Apercu-Italic.otf */,
+				53A0049C28EE42F900AD8FEA /* Apercu-Light-Italic.otf */,
+				53A0049228EE42F900AD8FEA /* Apercu-Light.otf */,
+				53A0049E28EE42F900AD8FEA /* Apercu-Medium-Italic.otf */,
+				53A0049328EE42F900AD8FEA /* Apercu-Medium.otf */,
+				53A0049D28EE42F900AD8FEA /* Apercu-Mono.otf */,
+				53A004A128EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf */,
+				53A0049428EE42F900AD8FEA /* Apercu-Pro-Bold.otf */,
+				53A0049128EE42F900AD8FEA /* Apercu-Pro-Italic.otf */,
+				53A0049F28EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf */,
+				53A004A028EE42F900AD8FEA /* Apercu-Pro-Light.otf */,
+				53A0049528EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf */,
+				53A0049A28EE42F900AD8FEA /* Apercu-Pro-Medium.otf */,
+				53A0049B28EE42F900AD8FEA /* Apercu-Pro-Mono.otf */,
+				53A0049728EE42F900AD8FEA /* Apercu-Pro-Regular.otf */,
+				53A0049928EE42F900AD8FEA /* Apercu-Regular.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		53A004C928EF329E00AD8FEA /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				53A004D428EF352C00AD8FEA /* TitleView.swift */,
+				53A004CA28EF32DF00AD8FEA /* DeliveryStatusProgressBarView.swift */,
+				53A004CC28EF338700AD8FEA /* OrderStatusIndicatorView.swift */,
+				53A004CE28EF341A00AD8FEA /* DashView.swift */,
+				53A004D028EF345900AD8FEA /* ProgressBarView.swift */,
+				53A004D228EF348600AD8FEA /* ArrivalTimeView.swift */,
+				53A004D628EF375D00AD8FEA /* typefaces.swift */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -92,8 +272,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				53A0048F28EE42D200AD8FEA /* fonts */,
 				13B07FAE1A68108700A75B9A /* ReactNativeActivityKitExample */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				532F977128EE367B00004362 /* ReactNativeActivityKitExampleWidget */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -108,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* ReactNativeActivityKitExample.app */,
+				532F976C28EE367B00004362 /* ReactNativeActivityKitExampleWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,15 +319,34 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				532F977A28EE367C00004362 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				532F977828EE367C00004362 /* PBXTargetDependency */,
 			);
 			name = ReactNativeActivityKitExample;
 			productName = ReactNativeActivityKitExample;
 			productReference = 13B07F961A680F5B00A75B9A /* ReactNativeActivityKitExample.app */;
 			productType = "com.apple.product-type.application";
+		};
+		532F976B28EE367B00004362 /* ReactNativeActivityKitExampleWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 532F977D28EE367C00004362 /* Build configuration list for PBXNativeTarget "ReactNativeActivityKitExampleWidgetExtension" */;
+			buildPhases = (
+				532F976828EE367B00004362 /* Sources */,
+				532F976928EE367B00004362 /* Frameworks */,
+				532F976A28EE367B00004362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactNativeActivityKitExampleWidgetExtension;
+			productName = ReactNativeActivityKitExampleWidgetExtension;
+			productReference = 532F976C28EE367B00004362 /* ReactNativeActivityKitExampleWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -152,14 +354,14 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
-					00E356ED1AD99517003FC87E = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 13B07F861A680F5B00A75B9A;
-					};
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
+					};
+					532F976B28EE367B00004362 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
@@ -177,6 +379,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* ReactNativeActivityKitExample */,
+				532F976B28EE367B00004362 /* ReactNativeActivityKitExampleWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -186,8 +389,54 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A004A628EE42F900AD8FEA /* Apercu-Light.otf in Resources */,
+				53A004A228EE42F900AD8FEA /* Apercu-Bold.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				53A004AC28EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				53A004C428EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf in Resources */,
+				53A004AA28EE42F900AD8FEA /* Apercu-Pro-Bold.otf in Resources */,
+				53A004BA28EE42F900AD8FEA /* Apercu-Light-Italic.otf in Resources */,
+				53A004BE28EE42F900AD8FEA /* Apercu-Medium-Italic.otf in Resources */,
+				53A004A428EE42F900AD8FEA /* Apercu-Pro-Italic.otf in Resources */,
+				53A004AE28EE42F900AD8FEA /* Apercu-Italic.otf in Resources */,
+				53A004B028EE42F900AD8FEA /* Apercu-Pro-Regular.otf in Resources */,
+				53A004C028EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf in Resources */,
+				53A004B628EE42F900AD8FEA /* Apercu-Pro-Medium.otf in Resources */,
+				53A004A828EE42F900AD8FEA /* Apercu-Medium.otf in Resources */,
+				53A004B228EE42F900AD8FEA /* Apercu-Bold-Italic.otf in Resources */,
+				53A004B828EE42F900AD8FEA /* Apercu-Pro-Mono.otf in Resources */,
+				53A004B428EE42F900AD8FEA /* Apercu-Regular.otf in Resources */,
+				53A004BC28EE42F900AD8FEA /* Apercu-Mono.otf in Resources */,
+				53A004C728EE451D00AD8FEA /* Analog-Script-Clean.otf in Resources */,
+				53A004C228EE42F900AD8FEA /* Apercu-Pro-Light.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		532F976A28EE367B00004362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53A004C328EE42F900AD8FEA /* Apercu-Pro-Light.otf in Resources */,
+				53A004AB28EE42F900AD8FEA /* Apercu-Pro-Bold.otf in Resources */,
+				532F977528EE367C00004362 /* Assets.xcassets in Resources */,
+				53A004AD28EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf in Resources */,
+				53A004B928EE42F900AD8FEA /* Apercu-Pro-Mono.otf in Resources */,
+				53A004A928EE42F900AD8FEA /* Apercu-Medium.otf in Resources */,
+				53A004B528EE42F900AD8FEA /* Apercu-Regular.otf in Resources */,
+				53A004BF28EE42F900AD8FEA /* Apercu-Medium-Italic.otf in Resources */,
+				53A004C528EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf in Resources */,
+				53A004B328EE42F900AD8FEA /* Apercu-Bold-Italic.otf in Resources */,
+				53A004A528EE42F900AD8FEA /* Apercu-Pro-Italic.otf in Resources */,
+				53A004A328EE42F900AD8FEA /* Apercu-Bold.otf in Resources */,
+				53A004AF28EE42F900AD8FEA /* Apercu-Italic.otf in Resources */,
+				53A004C128EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf in Resources */,
+				53A004C828EE451D00AD8FEA /* Analog-Script-Clean.otf in Resources */,
+				53A004BB28EE42F900AD8FEA /* Apercu-Light-Italic.otf in Resources */,
+				53A004BD28EE42F900AD8FEA /* Apercu-Mono.otf in Resources */,
+				53A004A728EE42F900AD8FEA /* Apercu-Light.otf in Resources */,
+				53A004B728EE42F900AD8FEA /* Apercu-Pro-Medium.otf in Resources */,
+				53A004B128EE42F900AD8FEA /* Apercu-Pro-Regular.otf in Resources */,
 				8B0F529A668845AB9A2D739F /* Feather.ttf in Resources */,
 				D8EB83CD17B74D119B35D49F /* Inter-Bold.ttf in Resources */,
 				518E776AE22546378E96CC16 /* Inter-Medium.ttf in Resources */,
@@ -299,13 +548,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		532F976828EE367B00004362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532F977328EE367B00004362 /* ReactNativeActivityKitExampleWidget.swift in Sources */,
+				53A004CB28EF32DF00AD8FEA /* DeliveryStatusProgressBarView.swift in Sources */,
+				53A004CD28EF338700AD8FEA /* OrderStatusIndicatorView.swift in Sources */,
+				53A004D328EF348600AD8FEA /* ArrivalTimeView.swift in Sources */,
+				532F977F28EE371900004362 /* OrderStatusActivityAttributes.swift in Sources */,
+				53A004D528EF352C00AD8FEA /* TitleView.swift in Sources */,
+				53A004D728EF375D00AD8FEA /* typefaces.swift in Sources */,
+				53A004CF28EF341A00AD8FEA /* DashView.swift in Sources */,
+				532F978228EE387500004362 /* OrderStatusLiveActivityView.swift in Sources */,
+				53A004D128EF345900AD8FEA /* ProgressBarView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		532F977828EE367C00004362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 532F976B28EE367B00004362 /* ReactNativeActivityKitExampleWidgetExtension */;
+			targetProxy = 532F977728EE367C00004362 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-ReactNativeActivityKitExample.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -332,6 +607,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-ReactNativeActivityKitExample.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -349,6 +625,84 @@
 				PRODUCT_NAME = ReactNativeActivityKitExample;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		532F977B28EE367C00004362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReactNativeActivityKitExampleWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ReactNativeActivityKitExampleWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.differentialreactnativeactivitykit.ReactNativeActivityKitExampleWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		532F977C28EE367C00004362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ReactNativeActivityKitExampleWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ReactNativeActivityKitExampleWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.differentialreactnativeactivitykit.ReactNativeActivityKitExampleWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -495,6 +849,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		532F977D28EE367C00004362 /* Build configuration list for PBXNativeTarget "ReactNativeActivityKitExampleWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				532F977B28EE367C00004362 /* Debug */,
+				532F977C28EE367C00004362 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
