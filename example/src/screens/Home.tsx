@@ -30,10 +30,23 @@ const styles = StyleSheet.create({
     height: 60,
     marginVertical: 20,
   },
-  pizza: {
-    height: 200,
-    width: 200,
-    backgroundColor: 'blue',
+  pizzaBox: {
+    padding: 20,
+    // backgroundColor: 'blue',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  pizzaImage: {
+    borderRadius: 8,
+    height: 120,
+    width: 120,
+  },
+  pizzaTitle: {
+    marginTop: 8,
+  },
+  listContainer: {
+    marginHorizontal: 20,
   },
 });
 
@@ -51,16 +64,14 @@ const renderPizza = ({
 }) => {
   return (
     <TouchableOpacity
-      onPress={() =>
-        navigation.navigate('Order', { _id: item._id, title: item.title })
-      }
+      onPress={() => navigation.navigate('Order', { pizza: item })}
     >
-      <View style={styles.pizza}>
+      <View style={styles.pizzaBox}>
         <Image
-          style={{ height: 250, width: 250 }}
-          source={{ uri: 'https://boredhumans.b-cdn.net/pizza/1294.jpg' }}
+          style={{ height: 120, width: 120 }}
+          source={{ uri: item.image }}
         />
-        <Text>{item.title}</Text>
+        <Text style={styles.pizzaTitle}>{item.title}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -72,6 +83,7 @@ const Home = () => {
     <View style={styles.container}>
       <Text>Result: {result}</Text>
       <FlatList
+        contentContainerStyle={styles.listContainer}
         data={pizzas}
         renderItem={({ item }) => renderPizza({ item, navigation })}
         numColumns={2}

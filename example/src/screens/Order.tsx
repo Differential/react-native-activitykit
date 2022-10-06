@@ -17,10 +17,19 @@ const styles = StyleSheet.create({
 type PizzaProps = {
   _id: string;
   title: string;
+  image: string;
 };
 
-const Pizza = ({ _id, title }: PizzaProps) => {
+const Pizza = ({
+  route: {
+    params: { pizza },
+  },
+}: {
+  route: { params: { pizza: PizzaProps } };
+}) => {
   const [checkedOptions, setCheckedOptions] = useState([]);
+  console.log(pizza);
+  const { title, image } = pizza;
   const options = [
     'spinich',
     'tomato',
