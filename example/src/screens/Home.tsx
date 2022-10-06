@@ -1,7 +1,9 @@
-import { NavigationRouteContext, useNavigation } from '@react-navigation/native';
+import {
+  NavigationRouteContext,
+  useNavigation,
+} from '@react-navigation/native';
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Button } from 'react-native-nucleus-ui';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { RootStackParamList } from './RootStackParamList';
 
@@ -26,7 +28,9 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
-      <Button title="Login" size="large" onPress={() => navigation.navigate('Order')} />
+      <TouchableOpacity onPress={() => navigation.navigate('Order')}>
+        <Text>{'Login'}</Text>
+      </TouchableOpacity>
     </View>
   );
 };
