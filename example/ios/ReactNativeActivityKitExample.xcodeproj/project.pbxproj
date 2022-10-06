@@ -18,44 +18,6 @@
 		532F977928EE367C00004362 /* ReactNativeActivityKitExampleWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 532F976C28EE367B00004362 /* ReactNativeActivityKitExampleWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		532F977F28EE371900004362 /* OrderStatusActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F977E28EE371900004362 /* OrderStatusActivityAttributes.swift */; };
 		532F978228EE387500004362 /* OrderStatusLiveActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532F978128EE387500004362 /* OrderStatusLiveActivityView.swift */; };
-		53A004A228EE42F900AD8FEA /* Apercu-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049028EE42F900AD8FEA /* Apercu-Bold.otf */; };
-		53A004A328EE42F900AD8FEA /* Apercu-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049028EE42F900AD8FEA /* Apercu-Bold.otf */; };
-		53A004A428EE42F900AD8FEA /* Apercu-Pro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049128EE42F900AD8FEA /* Apercu-Pro-Italic.otf */; };
-		53A004A528EE42F900AD8FEA /* Apercu-Pro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049128EE42F900AD8FEA /* Apercu-Pro-Italic.otf */; };
-		53A004A628EE42F900AD8FEA /* Apercu-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049228EE42F900AD8FEA /* Apercu-Light.otf */; };
-		53A004A728EE42F900AD8FEA /* Apercu-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049228EE42F900AD8FEA /* Apercu-Light.otf */; };
-		53A004A828EE42F900AD8FEA /* Apercu-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049328EE42F900AD8FEA /* Apercu-Medium.otf */; };
-		53A004A928EE42F900AD8FEA /* Apercu-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049328EE42F900AD8FEA /* Apercu-Medium.otf */; };
-		53A004AA28EE42F900AD8FEA /* Apercu-Pro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049428EE42F900AD8FEA /* Apercu-Pro-Bold.otf */; };
-		53A004AB28EE42F900AD8FEA /* Apercu-Pro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049428EE42F900AD8FEA /* Apercu-Pro-Bold.otf */; };
-		53A004AC28EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049528EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf */; };
-		53A004AD28EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049528EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf */; };
-		53A004AE28EE42F900AD8FEA /* Apercu-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049628EE42F900AD8FEA /* Apercu-Italic.otf */; };
-		53A004AF28EE42F900AD8FEA /* Apercu-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049628EE42F900AD8FEA /* Apercu-Italic.otf */; };
-		53A004B028EE42F900AD8FEA /* Apercu-Pro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049728EE42F900AD8FEA /* Apercu-Pro-Regular.otf */; };
-		53A004B128EE42F900AD8FEA /* Apercu-Pro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049728EE42F900AD8FEA /* Apercu-Pro-Regular.otf */; };
-		53A004B228EE42F900AD8FEA /* Apercu-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049828EE42F900AD8FEA /* Apercu-Bold-Italic.otf */; };
-		53A004B328EE42F900AD8FEA /* Apercu-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049828EE42F900AD8FEA /* Apercu-Bold-Italic.otf */; };
-		53A004B428EE42F900AD8FEA /* Apercu-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049928EE42F900AD8FEA /* Apercu-Regular.otf */; };
-		53A004B528EE42F900AD8FEA /* Apercu-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049928EE42F900AD8FEA /* Apercu-Regular.otf */; };
-		53A004B628EE42F900AD8FEA /* Apercu-Pro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049A28EE42F900AD8FEA /* Apercu-Pro-Medium.otf */; };
-		53A004B728EE42F900AD8FEA /* Apercu-Pro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049A28EE42F900AD8FEA /* Apercu-Pro-Medium.otf */; };
-		53A004B828EE42F900AD8FEA /* Apercu-Pro-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049B28EE42F900AD8FEA /* Apercu-Pro-Mono.otf */; };
-		53A004B928EE42F900AD8FEA /* Apercu-Pro-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049B28EE42F900AD8FEA /* Apercu-Pro-Mono.otf */; };
-		53A004BA28EE42F900AD8FEA /* Apercu-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049C28EE42F900AD8FEA /* Apercu-Light-Italic.otf */; };
-		53A004BB28EE42F900AD8FEA /* Apercu-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049C28EE42F900AD8FEA /* Apercu-Light-Italic.otf */; };
-		53A004BC28EE42F900AD8FEA /* Apercu-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049D28EE42F900AD8FEA /* Apercu-Mono.otf */; };
-		53A004BD28EE42F900AD8FEA /* Apercu-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049D28EE42F900AD8FEA /* Apercu-Mono.otf */; };
-		53A004BE28EE42F900AD8FEA /* Apercu-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049E28EE42F900AD8FEA /* Apercu-Medium-Italic.otf */; };
-		53A004BF28EE42F900AD8FEA /* Apercu-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049E28EE42F900AD8FEA /* Apercu-Medium-Italic.otf */; };
-		53A004C028EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049F28EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf */; };
-		53A004C128EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A0049F28EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf */; };
-		53A004C228EE42F900AD8FEA /* Apercu-Pro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004A028EE42F900AD8FEA /* Apercu-Pro-Light.otf */; };
-		53A004C328EE42F900AD8FEA /* Apercu-Pro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004A028EE42F900AD8FEA /* Apercu-Pro-Light.otf */; };
-		53A004C428EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004A128EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf */; };
-		53A004C528EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004A128EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf */; };
-		53A004C728EE451D00AD8FEA /* Analog-Script-Clean.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004C628EE451D00AD8FEA /* Analog-Script-Clean.otf */; };
-		53A004C828EE451D00AD8FEA /* Analog-Script-Clean.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53A004C628EE451D00AD8FEA /* Analog-Script-Clean.otf */; };
 		53A004CB28EF32DF00AD8FEA /* DeliveryStatusProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004CA28EF32DF00AD8FEA /* DeliveryStatusProgressBarView.swift */; };
 		53A004CD28EF338700AD8FEA /* OrderStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004CC28EF338700AD8FEA /* OrderStatusIndicatorView.swift */; };
 		53A004CF28EF341A00AD8FEA /* DashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004CE28EF341A00AD8FEA /* DashView.swift */; };
@@ -63,6 +25,46 @@
 		53A004D328EF348600AD8FEA /* ArrivalTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004D228EF348600AD8FEA /* ArrivalTimeView.swift */; };
 		53A004D528EF352C00AD8FEA /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004D428EF352C00AD8FEA /* TitleView.swift */; };
 		53A004D728EF375D00AD8FEA /* typefaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004D628EF375D00AD8FEA /* typefaces.swift */; };
+		53EE110A28EF83F200887AEE /* Apercu-Pro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10F628EF83F100887AEE /* Apercu-Pro-Bold.otf */; };
+		53EE110B28EF83F200887AEE /* Apercu-Pro-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10F728EF83F100887AEE /* Apercu-Pro-Mono.otf */; };
+		53EE110C28EF83F200887AEE /* Apercu-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10F828EF83F100887AEE /* Apercu-Medium.otf */; };
+		53EE110D28EF83F200887AEE /* Apercu-Pro-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10F928EF83F100887AEE /* Apercu-Pro-Light-Italic.otf */; };
+		53EE110E28EF83F200887AEE /* Apercu-Pro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FA28EF83F100887AEE /* Apercu-Pro-Italic.otf */; };
+		53EE110F28EF83F200887AEE /* Apercu-Pro-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FB28EF83F100887AEE /* Apercu-Pro-Medium-Italic.otf */; };
+		53EE111028EF83F200887AEE /* Apercu-Font-Family.zip in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FC28EF83F100887AEE /* Apercu-Font-Family.zip */; };
+		53EE111128EF83F200887AEE /* Apercu-Pro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FD28EF83F100887AEE /* Apercu-Pro-Light.otf */; };
+		53EE111228EF83F200887AEE /* Apercu-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FE28EF83F100887AEE /* Apercu-Bold-Italic.otf */; };
+		53EE111328EF83F200887AEE /* Apercu-Pro-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FF28EF83F100887AEE /* Apercu-Pro-Bold-Italic.otf */; };
+		53EE111428EF83F200887AEE /* Apercu-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110028EF83F100887AEE /* Apercu-Light.otf */; };
+		53EE111528EF83F200887AEE /* Apercu-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110128EF83F100887AEE /* Apercu-Bold.otf */; };
+		53EE111628EF83F200887AEE /* Apercu-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110228EF83F100887AEE /* Apercu-Medium-Italic.otf */; };
+		53EE111728EF83F200887AEE /* Apercu-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110328EF83F100887AEE /* Apercu-Mono.otf */; };
+		53EE111828EF83F200887AEE /* Apercu-Pro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110428EF83F100887AEE /* Apercu-Pro-Regular.otf */; };
+		53EE111928EF83F200887AEE /* Apercu-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110528EF83F100887AEE /* Apercu-Regular.otf */; };
+		53EE111A28EF83F200887AEE /* Apercu-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110628EF83F200887AEE /* Apercu-Light-Italic.otf */; };
+		53EE111B28EF83F200887AEE /* Analog-Script-Clean.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110728EF83F200887AEE /* Analog-Script-Clean.otf */; };
+		53EE111C28EF83F200887AEE /* Apercu-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110828EF83F200887AEE /* Apercu-Italic.otf */; };
+		53EE111D28EF83F200887AEE /* Apercu-Pro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110928EF83F200887AEE /* Apercu-Pro-Medium.otf */; };
+		53EE111E28EF840600887AEE /* Apercu-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FE28EF83F100887AEE /* Apercu-Bold-Italic.otf */; };
+		53EE111F28EF840600887AEE /* Apercu-Pro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FA28EF83F100887AEE /* Apercu-Pro-Italic.otf */; };
+		53EE112028EF840600887AEE /* Analog-Script-Clean.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110728EF83F200887AEE /* Analog-Script-Clean.otf */; };
+		53EE112128EF840600887AEE /* Apercu-Pro-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10F728EF83F100887AEE /* Apercu-Pro-Mono.otf */; };
+		53EE112228EF840600887AEE /* Apercu-Pro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10F628EF83F100887AEE /* Apercu-Pro-Bold.otf */; };
+		53EE112328EF840600887AEE /* Apercu-Pro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110928EF83F200887AEE /* Apercu-Pro-Medium.otf */; };
+		53EE112428EF840600887AEE /* Apercu-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110528EF83F100887AEE /* Apercu-Regular.otf */; };
+		53EE112528EF840600887AEE /* Apercu-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110028EF83F100887AEE /* Apercu-Light.otf */; };
+		53EE112628EF840600887AEE /* Apercu-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10F828EF83F100887AEE /* Apercu-Medium.otf */; };
+		53EE112728EF840600887AEE /* Apercu-Pro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FD28EF83F100887AEE /* Apercu-Pro-Light.otf */; };
+		53EE112828EF840600887AEE /* Apercu-Font-Family.zip in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FC28EF83F100887AEE /* Apercu-Font-Family.zip */; };
+		53EE112928EF840600887AEE /* Apercu-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110228EF83F100887AEE /* Apercu-Medium-Italic.otf */; };
+		53EE112A28EF840600887AEE /* Apercu-Pro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110428EF83F100887AEE /* Apercu-Pro-Regular.otf */; };
+		53EE112B28EF840600887AEE /* Apercu-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110128EF83F100887AEE /* Apercu-Bold.otf */; };
+		53EE112C28EF840600887AEE /* Apercu-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110828EF83F200887AEE /* Apercu-Italic.otf */; };
+		53EE112D28EF840600887AEE /* Apercu-Pro-Medium-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FB28EF83F100887AEE /* Apercu-Pro-Medium-Italic.otf */; };
+		53EE112E28EF840600887AEE /* Apercu-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110328EF83F100887AEE /* Apercu-Mono.otf */; };
+		53EE112F28EF840600887AEE /* Apercu-Pro-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FF28EF83F100887AEE /* Apercu-Pro-Bold-Italic.otf */; };
+		53EE113028EF840600887AEE /* Apercu-Pro-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10F928EF83F100887AEE /* Apercu-Pro-Light-Italic.otf */; };
+		53EE113128EF840600887AEE /* Apercu-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110628EF83F200887AEE /* Apercu-Light-Italic.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8B0F529A668845AB9A2D739F /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AECE793FE7954C19B6A781A8 /* Feather.ttf */; };
 		D8EB83CD17B74D119B35D49F /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F53904BF6569477BBF686462 /* Inter-Bold.ttf */; };
@@ -100,6 +102,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactNativeActivityKitExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeActivityKitExample/main.m; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-ReactNativeActivityKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeActivityKitExample.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeActivityKitExample/Pods-ReactNativeActivityKitExample.debug.xcconfig"; sourceTree = "<group>"; };
+		4BB47D188A34413893F5EF4B /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../node_modules/react-native-nucleus-ui/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		532F976C28EE367B00004362 /* ReactNativeActivityKitExampleWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ReactNativeActivityKitExampleWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		532F976D28EE367B00004362 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		532F976F28EE367B00004362 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -108,25 +111,6 @@
 		532F977628EE367C00004362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532F977E28EE371900004362 /* OrderStatusActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusActivityAttributes.swift; sourceTree = "<group>"; };
 		532F978128EE387500004362 /* OrderStatusLiveActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusLiveActivityView.swift; sourceTree = "<group>"; };
-		53A0049028EE42F900AD8FEA /* Apercu-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Bold.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Bold.otf"; sourceTree = "<group>"; };
-		53A0049128EE42F900AD8FEA /* Apercu-Pro-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Italic.otf"; sourceTree = "<group>"; };
-		53A0049228EE42F900AD8FEA /* Apercu-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Light.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Light.otf"; sourceTree = "<group>"; };
-		53A0049328EE42F900AD8FEA /* Apercu-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Medium.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Medium.otf"; sourceTree = "<group>"; };
-		53A0049428EE42F900AD8FEA /* Apercu-Pro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Bold.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Bold.otf"; sourceTree = "<group>"; };
-		53A0049528EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Medium-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Medium-Italic.otf"; sourceTree = "<group>"; };
-		53A0049628EE42F900AD8FEA /* Apercu-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Italic.otf"; sourceTree = "<group>"; };
-		53A0049728EE42F900AD8FEA /* Apercu-Pro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Regular.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Regular.otf"; sourceTree = "<group>"; };
-		53A0049828EE42F900AD8FEA /* Apercu-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Bold-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Bold-Italic.otf"; sourceTree = "<group>"; };
-		53A0049928EE42F900AD8FEA /* Apercu-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Regular.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Regular.otf"; sourceTree = "<group>"; };
-		53A0049A28EE42F900AD8FEA /* Apercu-Pro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Medium.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Medium.otf"; sourceTree = "<group>"; };
-		53A0049B28EE42F900AD8FEA /* Apercu-Pro-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Mono.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Mono.otf"; sourceTree = "<group>"; };
-		53A0049C28EE42F900AD8FEA /* Apercu-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Light-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Light-Italic.otf"; sourceTree = "<group>"; };
-		53A0049D28EE42F900AD8FEA /* Apercu-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Mono.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Mono.otf"; sourceTree = "<group>"; };
-		53A0049E28EE42F900AD8FEA /* Apercu-Medium-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Medium-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Medium-Italic.otf"; sourceTree = "<group>"; };
-		53A0049F28EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Light-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Light-Italic.otf"; sourceTree = "<group>"; };
-		53A004A028EE42F900AD8FEA /* Apercu-Pro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Light.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Light.otf"; sourceTree = "<group>"; };
-		53A004A128EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Bold-Italic.otf"; path = "../../../../../../Downloads/Apercu Font Family/Apercu-Pro-Bold-Italic.otf"; sourceTree = "<group>"; };
-		53A004C628EE451D00AD8FEA /* Analog-Script-Clean.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Analog-Script-Clean.otf"; path = "../../../../../../Downloads/Analog_Script/Analog-Script-Clean.otf"; sourceTree = "<group>"; };
 		53A004CA28EF32DF00AD8FEA /* DeliveryStatusProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryStatusProgressBarView.swift; sourceTree = "<group>"; };
 		53A004CC28EF338700AD8FEA /* OrderStatusIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusIndicatorView.swift; sourceTree = "<group>"; };
 		53A004CE28EF341A00AD8FEA /* DashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashView.swift; sourceTree = "<group>"; };
@@ -134,10 +118,33 @@
 		53A004D228EF348600AD8FEA /* ArrivalTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalTimeView.swift; sourceTree = "<group>"; };
 		53A004D428EF352C00AD8FEA /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		53A004D628EF375D00AD8FEA /* typefaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = typefaces.swift; sourceTree = "<group>"; };
+		53EE10F628EF83F100887AEE /* Apercu-Pro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Bold.otf"; path = "../../assets/fonts/Apercu-Pro-Bold.otf"; sourceTree = "<group>"; };
+		53EE10F728EF83F100887AEE /* Apercu-Pro-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Mono.otf"; path = "../../assets/fonts/Apercu-Pro-Mono.otf"; sourceTree = "<group>"; };
+		53EE10F828EF83F100887AEE /* Apercu-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Medium.otf"; path = "../../assets/fonts/Apercu-Medium.otf"; sourceTree = "<group>"; };
+		53EE10F928EF83F100887AEE /* Apercu-Pro-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Light-Italic.otf"; path = "../../assets/fonts/Apercu-Pro-Light-Italic.otf"; sourceTree = "<group>"; };
+		53EE10FA28EF83F100887AEE /* Apercu-Pro-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Italic.otf"; path = "../../assets/fonts/Apercu-Pro-Italic.otf"; sourceTree = "<group>"; };
+		53EE10FB28EF83F100887AEE /* Apercu-Pro-Medium-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Medium-Italic.otf"; path = "../../assets/fonts/Apercu-Pro-Medium-Italic.otf"; sourceTree = "<group>"; };
+		53EE10FC28EF83F100887AEE /* Apercu-Font-Family.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = "Apercu-Font-Family.zip"; path = "../../assets/fonts/Apercu-Font-Family.zip"; sourceTree = "<group>"; };
+		53EE10FD28EF83F100887AEE /* Apercu-Pro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Light.otf"; path = "../../assets/fonts/Apercu-Pro-Light.otf"; sourceTree = "<group>"; };
+		53EE10FE28EF83F100887AEE /* Apercu-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Bold-Italic.otf"; path = "../../assets/fonts/Apercu-Bold-Italic.otf"; sourceTree = "<group>"; };
+		53EE10FF28EF83F100887AEE /* Apercu-Pro-Bold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Bold-Italic.otf"; path = "../../assets/fonts/Apercu-Pro-Bold-Italic.otf"; sourceTree = "<group>"; };
+		53EE110028EF83F100887AEE /* Apercu-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Light.otf"; path = "../../assets/fonts/Apercu-Light.otf"; sourceTree = "<group>"; };
+		53EE110128EF83F100887AEE /* Apercu-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Bold.otf"; path = "../../assets/fonts/Apercu-Bold.otf"; sourceTree = "<group>"; };
+		53EE110228EF83F100887AEE /* Apercu-Medium-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Medium-Italic.otf"; path = "../../assets/fonts/Apercu-Medium-Italic.otf"; sourceTree = "<group>"; };
+		53EE110328EF83F100887AEE /* Apercu-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Mono.otf"; path = "../../assets/fonts/Apercu-Mono.otf"; sourceTree = "<group>"; };
+		53EE110428EF83F100887AEE /* Apercu-Pro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Regular.otf"; path = "../../assets/fonts/Apercu-Pro-Regular.otf"; sourceTree = "<group>"; };
+		53EE110528EF83F100887AEE /* Apercu-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Regular.otf"; path = "../../assets/fonts/Apercu-Regular.otf"; sourceTree = "<group>"; };
+		53EE110628EF83F200887AEE /* Apercu-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Light-Italic.otf"; path = "../../assets/fonts/Apercu-Light-Italic.otf"; sourceTree = "<group>"; };
+		53EE110728EF83F200887AEE /* Analog-Script-Clean.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Analog-Script-Clean.otf"; path = "../../assets/fonts/Analog-Script-Clean.otf"; sourceTree = "<group>"; };
+		53EE110828EF83F200887AEE /* Apercu-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Italic.otf"; path = "../../assets/fonts/Apercu-Italic.otf"; sourceTree = "<group>"; };
+		53EE110928EF83F200887AEE /* Apercu-Pro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Medium.otf"; path = "../../assets/fonts/Apercu-Pro-Medium.otf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-ReactNativeActivityKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeActivityKitExample.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeActivityKitExample/Pods-ReactNativeActivityKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-ReactNativeActivityKitExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeActivityKitExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeActivityKitExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A951D07739B148B1A10A19BC /* Inter-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Medium.ttf"; path = "../node_modules/react-native-nucleus-ui/fonts/Inter-Medium.ttf"; sourceTree = "<group>"; };
+		AECE793FE7954C19B6A781A8 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-nucleus-ui/fonts/Feather.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F53904BF6569477BBF686462 /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../node_modules/react-native-nucleus-ui/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +190,6 @@
 				4BB47D188A34413893F5EF4B /* Inter-Regular.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -221,25 +227,26 @@
 		53A0048F28EE42D200AD8FEA /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				53A004C628EE451D00AD8FEA /* Analog-Script-Clean.otf */,
-				53A0049828EE42F900AD8FEA /* Apercu-Bold-Italic.otf */,
-				53A0049028EE42F900AD8FEA /* Apercu-Bold.otf */,
-				53A0049628EE42F900AD8FEA /* Apercu-Italic.otf */,
-				53A0049C28EE42F900AD8FEA /* Apercu-Light-Italic.otf */,
-				53A0049228EE42F900AD8FEA /* Apercu-Light.otf */,
-				53A0049E28EE42F900AD8FEA /* Apercu-Medium-Italic.otf */,
-				53A0049328EE42F900AD8FEA /* Apercu-Medium.otf */,
-				53A0049D28EE42F900AD8FEA /* Apercu-Mono.otf */,
-				53A004A128EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf */,
-				53A0049428EE42F900AD8FEA /* Apercu-Pro-Bold.otf */,
-				53A0049128EE42F900AD8FEA /* Apercu-Pro-Italic.otf */,
-				53A0049F28EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf */,
-				53A004A028EE42F900AD8FEA /* Apercu-Pro-Light.otf */,
-				53A0049528EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf */,
-				53A0049A28EE42F900AD8FEA /* Apercu-Pro-Medium.otf */,
-				53A0049B28EE42F900AD8FEA /* Apercu-Pro-Mono.otf */,
-				53A0049728EE42F900AD8FEA /* Apercu-Pro-Regular.otf */,
-				53A0049928EE42F900AD8FEA /* Apercu-Regular.otf */,
+				53EE110728EF83F200887AEE /* Analog-Script-Clean.otf */,
+				53EE10FE28EF83F100887AEE /* Apercu-Bold-Italic.otf */,
+				53EE110128EF83F100887AEE /* Apercu-Bold.otf */,
+				53EE10FC28EF83F100887AEE /* Apercu-Font-Family.zip */,
+				53EE110828EF83F200887AEE /* Apercu-Italic.otf */,
+				53EE110628EF83F200887AEE /* Apercu-Light-Italic.otf */,
+				53EE110028EF83F100887AEE /* Apercu-Light.otf */,
+				53EE110228EF83F100887AEE /* Apercu-Medium-Italic.otf */,
+				53EE10F828EF83F100887AEE /* Apercu-Medium.otf */,
+				53EE110328EF83F100887AEE /* Apercu-Mono.otf */,
+				53EE10FF28EF83F100887AEE /* Apercu-Pro-Bold-Italic.otf */,
+				53EE10F628EF83F100887AEE /* Apercu-Pro-Bold.otf */,
+				53EE10FA28EF83F100887AEE /* Apercu-Pro-Italic.otf */,
+				53EE10F928EF83F100887AEE /* Apercu-Pro-Light-Italic.otf */,
+				53EE10FD28EF83F100887AEE /* Apercu-Pro-Light.otf */,
+				53EE10FB28EF83F100887AEE /* Apercu-Pro-Medium-Italic.otf */,
+				53EE110928EF83F200887AEE /* Apercu-Pro-Medium.otf */,
+				53EE10F728EF83F100887AEE /* Apercu-Pro-Mono.otf */,
+				53EE110428EF83F100887AEE /* Apercu-Pro-Regular.otf */,
+				53EE110528EF83F100887AEE /* Apercu-Regular.otf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -385,27 +392,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A004A628EE42F900AD8FEA /* Apercu-Light.otf in Resources */,
-				53A004A228EE42F900AD8FEA /* Apercu-Bold.otf in Resources */,
+				53EE112D28EF840600887AEE /* Apercu-Pro-Medium-Italic.otf in Resources */,
+				53EE112328EF840600887AEE /* Apercu-Pro-Medium.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				53A004AC28EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf in Resources */,
+				53EE112228EF840600887AEE /* Apercu-Pro-Bold.otf in Resources */,
+				53EE112F28EF840600887AEE /* Apercu-Pro-Bold-Italic.otf in Resources */,
+				53EE112628EF840600887AEE /* Apercu-Medium.otf in Resources */,
+				53EE113128EF840600887AEE /* Apercu-Light-Italic.otf in Resources */,
+				53EE112E28EF840600887AEE /* Apercu-Mono.otf in Resources */,
+				53EE112B28EF840600887AEE /* Apercu-Bold.otf in Resources */,
+				53EE112028EF840600887AEE /* Analog-Script-Clean.otf in Resources */,
+				53EE111F28EF840600887AEE /* Apercu-Pro-Italic.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				53A004C428EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf in Resources */,
-				53A004AA28EE42F900AD8FEA /* Apercu-Pro-Bold.otf in Resources */,
-				53A004BA28EE42F900AD8FEA /* Apercu-Light-Italic.otf in Resources */,
-				53A004BE28EE42F900AD8FEA /* Apercu-Medium-Italic.otf in Resources */,
-				53A004A428EE42F900AD8FEA /* Apercu-Pro-Italic.otf in Resources */,
-				53A004AE28EE42F900AD8FEA /* Apercu-Italic.otf in Resources */,
-				53A004B028EE42F900AD8FEA /* Apercu-Pro-Regular.otf in Resources */,
-				53A004C028EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf in Resources */,
-				53A004B628EE42F900AD8FEA /* Apercu-Pro-Medium.otf in Resources */,
-				53A004A828EE42F900AD8FEA /* Apercu-Medium.otf in Resources */,
-				53A004B228EE42F900AD8FEA /* Apercu-Bold-Italic.otf in Resources */,
-				53A004B828EE42F900AD8FEA /* Apercu-Pro-Mono.otf in Resources */,
-				53A004B428EE42F900AD8FEA /* Apercu-Regular.otf in Resources */,
-				53A004BC28EE42F900AD8FEA /* Apercu-Mono.otf in Resources */,
-				53A004C728EE451D00AD8FEA /* Analog-Script-Clean.otf in Resources */,
-				53A004C228EE42F900AD8FEA /* Apercu-Pro-Light.otf in Resources */,
+				53EE112A28EF840600887AEE /* Apercu-Pro-Regular.otf in Resources */,
+				53EE112128EF840600887AEE /* Apercu-Pro-Mono.otf in Resources */,
+				53EE112828EF840600887AEE /* Apercu-Font-Family.zip in Resources */,
+				53EE112428EF840600887AEE /* Apercu-Regular.otf in Resources */,
+				53EE112528EF840600887AEE /* Apercu-Light.otf in Resources */,
+				53EE113028EF840600887AEE /* Apercu-Pro-Light-Italic.otf in Resources */,
+				53EE112728EF840600887AEE /* Apercu-Pro-Light.otf in Resources */,
+				53EE112928EF840600887AEE /* Apercu-Medium-Italic.otf in Resources */,
+				53EE112C28EF840600887AEE /* Apercu-Italic.otf in Resources */,
+				53EE111E28EF840600887AEE /* Apercu-Bold-Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,28 +421,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A004C328EE42F900AD8FEA /* Apercu-Pro-Light.otf in Resources */,
-				53A004AB28EE42F900AD8FEA /* Apercu-Pro-Bold.otf in Resources */,
+				53EE111628EF83F200887AEE /* Apercu-Medium-Italic.otf in Resources */,
+				53EE111428EF83F200887AEE /* Apercu-Light.otf in Resources */,
+				53EE111A28EF83F200887AEE /* Apercu-Light-Italic.otf in Resources */,
+				53EE110F28EF83F200887AEE /* Apercu-Pro-Medium-Italic.otf in Resources */,
+				53EE110C28EF83F200887AEE /* Apercu-Medium.otf in Resources */,
+				53EE111228EF83F200887AEE /* Apercu-Bold-Italic.otf in Resources */,
 				532F977528EE367C00004362 /* Assets.xcassets in Resources */,
-				53A004AD28EE42F900AD8FEA /* Apercu-Pro-Medium-Italic.otf in Resources */,
-				53A004B928EE42F900AD8FEA /* Apercu-Pro-Mono.otf in Resources */,
-				53A004A928EE42F900AD8FEA /* Apercu-Medium.otf in Resources */,
-				53A004B528EE42F900AD8FEA /* Apercu-Regular.otf in Resources */,
-				53A004BF28EE42F900AD8FEA /* Apercu-Medium-Italic.otf in Resources */,
-				53A004C528EE42F900AD8FEA /* Apercu-Pro-Bold-Italic.otf in Resources */,
-				53A004B328EE42F900AD8FEA /* Apercu-Bold-Italic.otf in Resources */,
-				53A004A528EE42F900AD8FEA /* Apercu-Pro-Italic.otf in Resources */,
-				53A004A328EE42F900AD8FEA /* Apercu-Bold.otf in Resources */,
-				53A004AF28EE42F900AD8FEA /* Apercu-Italic.otf in Resources */,
-				53A004C128EE42F900AD8FEA /* Apercu-Pro-Light-Italic.otf in Resources */,
-				53A004C828EE451D00AD8FEA /* Analog-Script-Clean.otf in Resources */,
-				53A004BB28EE42F900AD8FEA /* Apercu-Light-Italic.otf in Resources */,
-				53A004BD28EE42F900AD8FEA /* Apercu-Mono.otf in Resources */,
-				53A004A728EE42F900AD8FEA /* Apercu-Light.otf in Resources */,
-				53A004B728EE42F900AD8FEA /* Apercu-Pro-Medium.otf in Resources */,
-				53A004B128EE42F900AD8FEA /* Apercu-Pro-Regular.otf in Resources */,
+				53EE110D28EF83F200887AEE /* Apercu-Pro-Light-Italic.otf in Resources */,
 				8B0F529A668845AB9A2D739F /* Feather.ttf in Resources */,
+				53EE111128EF83F200887AEE /* Apercu-Pro-Light.otf in Resources */,
+				53EE110B28EF83F200887AEE /* Apercu-Pro-Mono.otf in Resources */,
+				53EE111928EF83F200887AEE /* Apercu-Regular.otf in Resources */,
+				53EE111028EF83F200887AEE /* Apercu-Font-Family.zip in Resources */,
+				53EE110E28EF83F200887AEE /* Apercu-Pro-Italic.otf in Resources */,
+				53EE110A28EF83F200887AEE /* Apercu-Pro-Bold.otf in Resources */,
+				53EE111328EF83F200887AEE /* Apercu-Pro-Bold-Italic.otf in Resources */,
+				53EE111528EF83F200887AEE /* Apercu-Bold.otf in Resources */,
+				53EE111728EF83F200887AEE /* Apercu-Mono.otf in Resources */,
+				53EE111B28EF83F200887AEE /* Analog-Script-Clean.otf in Resources */,
+				53EE111828EF83F200887AEE /* Apercu-Pro-Regular.otf in Resources */,
 				D8EB83CD17B74D119B35D49F /* Inter-Bold.ttf in Resources */,
+				53EE111D28EF83F200887AEE /* Apercu-Pro-Medium.otf in Resources */,
+				53EE111C28EF83F200887AEE /* Apercu-Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
