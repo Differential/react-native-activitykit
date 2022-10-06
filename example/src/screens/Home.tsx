@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    height: 100,
   },
 
   box: {
@@ -34,12 +35,23 @@ const Home: React.FC = () => {
   );
 
   const selectCategory = (category: string) => {
-    selectMenuCategory(category);
+    dispatch(selectMenuCategory(category));
   };
 
   return (
     <View style={styles.container}>
-      <View></View>
+      <View style={styles.categories}>
+        <Button
+          title="Pizza"
+          size="small"
+          appearance={menuSelection === 'Pizza' ? 'primary' : 'secondary'}
+        />
+        <Button
+          title="Calzones"
+          size="small"
+          appearance={menuSelection === 'Calzones' ? 'primary' : 'secondary'}
+        />
+      </View>
       <Text>Result: {result}</Text>
       <Button title="Login" size="large" />
     </View>

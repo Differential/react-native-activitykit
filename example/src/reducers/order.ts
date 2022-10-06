@@ -1,9 +1,4 @@
-// import {
-//   FORM_SUBMITTED,
-//   SELECT_OPTION,
-//   UPDATE_FIELDS,
-//   UPDATE_CAMPUS,
-// } from './actions';
+import { SELECT_MENU_CATEGORY } from './actions';
 
 type ReduxAction = {
   type: string;
