@@ -64,6 +64,8 @@
 		53A004D528EF352C00AD8FEA /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004D428EF352C00AD8FEA /* TitleView.swift */; };
 		53A004D728EF375D00AD8FEA /* typefaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A004D628EF375D00AD8FEA /* typefaces.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8B0F529A668845AB9A2D739F /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AECE793FE7954C19B6A781A8 /* Feather.ttf */; };
+		D8EB83CD17B74D119B35D49F /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F53904BF6569477BBF686462 /* Inter-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,10 +134,14 @@
 		53A004D228EF348600AD8FEA /* ArrivalTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalTimeView.swift; sourceTree = "<group>"; };
 		53A004D428EF352C00AD8FEA /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		53A004D628EF375D00AD8FEA /* typefaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = typefaces.swift; sourceTree = "<group>"; };
+		4BB47D188A34413893F5EF4B /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../node_modules/react-native-nucleus-ui/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-ReactNativeActivityKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeActivityKitExample.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeActivityKitExample/Pods-ReactNativeActivityKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-ReactNativeActivityKitExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeActivityKitExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeActivityKitExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A951D07739B148B1A10A19BC /* Inter-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Medium.ttf"; path = "../node_modules/react-native-nucleus-ui/fonts/Inter-Medium.ttf"; sourceTree = "<group>"; };
+		AECE793FE7954C19B6A781A8 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-nucleus-ui/fonts/Feather.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F53904BF6569477BBF686462 /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../node_modules/react-native-nucleus-ui/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,18 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = ReactNativeActivityKitExample;
+			sourceTree = "<group>";
+		};
+		1B9DF25A98ED4472A8CDF601 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AECE793FE7954C19B6A781A8 /* Feather.ttf */,
+				F53904BF6569477BBF686462 /* Inter-Bold.ttf */,
+				A951D07739B148B1A10A19BC /* Inter-Medium.ttf */,
+				4BB47D188A34413893F5EF4B /* Inter-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -261,6 +279,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				1B9DF25A98ED4472A8CDF601 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -418,6 +437,10 @@
 				53A004A728EE42F900AD8FEA /* Apercu-Light.otf in Resources */,
 				53A004B728EE42F900AD8FEA /* Apercu-Pro-Medium.otf in Resources */,
 				53A004B128EE42F900AD8FEA /* Apercu-Pro-Regular.otf in Resources */,
+				8B0F529A668845AB9A2D739F /* Feather.ttf in Resources */,
+				D8EB83CD17B74D119B35D49F /* Inter-Bold.ttf in Resources */,
+				518E776AE22546378E96CC16 /* Inter-Medium.ttf in Resources */,
+				3411D3BF4B4D44BBAADAF52B /* Inter-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
