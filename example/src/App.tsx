@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationProp,
+} from '@react-navigation/native-stack';
 import { Provider } from 'react-redux';
 
 import { createStore, applyMiddleware } from 'redux';
@@ -15,6 +19,7 @@ const store = createStore(rootReducer, composedEnhancer);
 import { multiply } from 'react-native-activitykit';
 
 import Home from './screens/Home';
+import Order from './screens/Order';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +35,7 @@ export default function App() {
       <Provider store={store}>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Order" component={Order} />
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>

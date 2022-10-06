@@ -1,6 +1,12 @@
+import {
+  NavigationRouteContext,
+  useNavigation,
+} from '@react-navigation/native';
 import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Button } from 'react-native-nucleus-ui';
+import type { StackNavigationProp } from '@react-navigation/stack';
+import type { RootStackParamList } from './RootStackParamList';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -27,6 +33,8 @@ const styles = StyleSheet.create({
   },
 });
 
+type orderScreenProp = StackNavigationProp<RootStackParamList, 'Order'>;
+
 const Home: React.FC = () => {
   const dispatch = useDispatch();
   const result = 'Result!';
@@ -38,6 +46,8 @@ const Home: React.FC = () => {
     dispatch(selectMenuCategory(category));
   };
 
+  const navigation = useNavigation<orderScreenProp>();
+
   return (
     <View style={styles.container}>
       <View style={styles.categories}>
@@ -45,15 +55,21 @@ const Home: React.FC = () => {
           title="Pizza"
           size="small"
           appearance={menuSelection === 'Pizza' ? 'primary' : 'secondary'}
+          onPress={selectCategory('Pizza')}
         />
         <Button
           title="Calzones"
           size="small"
           appearance={menuSelection === 'Calzones' ? 'primary' : 'secondary'}
+          onPress={selectCategory('Calzones')}
         />
       </View>
       <Text>Result: {result}</Text>
-      <Button title="Login" size="large" />
+      <Button
+        title="Login"
+        size="large"
+        onPress={() => navigation.navigate('Order')}
+      />
     </View>
   );
 };

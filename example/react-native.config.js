@@ -6,4 +6,5 @@ module.exports = {
       root: path.join(__dirname, '..'),
     },
   },
+  assets: ['./example/node_modules/react-native-nucleus-ui/fonts'],
 };
