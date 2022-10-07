@@ -1,6 +1,5 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Button, Chip, Icon, PageControls } from 'react-native-nucleus-ui';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,8 +21,8 @@ const Order = () => {
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
-      <Button title="Order" size="large" />
-      {options.map((option)=>(<Button title="" style={{backgroundColor: checkedOptions.includes(option) ? 'red' : 'green'}} icon={'check'} onPress={()=>null} />))}
+      {/* <Button title="Order" size="large" /> */}
+      {/* {options.map((option)=>(<Button title="" style={{backgroundColor: checkedOptions.includes(option) ? 'red' : 'green'}} icon={'check'} onPress={()=>null} />))} */}
     </View>
   );
 };

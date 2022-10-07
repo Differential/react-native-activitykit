@@ -65,9 +65,8 @@
 		53EE112F28EF840600887AEE /* Apercu-Pro-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10FF28EF83F100887AEE /* Apercu-Pro-Bold-Italic.otf */; };
 		53EE113028EF840600887AEE /* Apercu-Pro-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE10F928EF83F100887AEE /* Apercu-Pro-Light-Italic.otf */; };
 		53EE113128EF840600887AEE /* Apercu-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53EE110628EF83F200887AEE /* Apercu-Light-Italic.otf */; };
+		66694CAFD7E9A0217D0CE2AB /* libPods-ReactNativeActivityKitExampleWidgetExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2AA6F18629A1BA672ABB37 /* libPods-ReactNativeActivityKitExampleWidgetExtension.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8B0F529A668845AB9A2D739F /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AECE793FE7954C19B6A781A8 /* Feather.ttf */; };
-		D8EB83CD17B74D119B35D49F /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F53904BF6569477BBF686462 /* Inter-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,9 +139,12 @@
 		53EE110928EF83F200887AEE /* Apercu-Pro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu-Pro-Medium.otf"; path = "../../assets/fonts/Apercu-Pro-Medium.otf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-ReactNativeActivityKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeActivityKitExample.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeActivityKitExample/Pods-ReactNativeActivityKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-ReactNativeActivityKitExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeActivityKitExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D2AA6F18629A1BA672ABB37 /* libPods-ReactNativeActivityKitExampleWidgetExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeActivityKitExampleWidgetExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeActivityKitExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9785F6C454BB2755AEEDA619 /* Pods-ReactNativeActivityKitExampleWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeActivityKitExampleWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeActivityKitExampleWidgetExtension/Pods-ReactNativeActivityKitExampleWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		A951D07739B148B1A10A19BC /* Inter-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Medium.ttf"; path = "../node_modules/react-native-nucleus-ui/fonts/Inter-Medium.ttf"; sourceTree = "<group>"; };
 		AECE793FE7954C19B6A781A8 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-nucleus-ui/fonts/Feather.ttf"; sourceTree = "<group>"; };
+		C4001E33884CB41BAB828CD6 /* Pods-ReactNativeActivityKitExampleWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeActivityKitExampleWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeActivityKitExampleWidgetExtension/Pods-ReactNativeActivityKitExampleWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F53904BF6569477BBF686462 /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../node_modules/react-native-nucleus-ui/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +164,7 @@
 			files = (
 				532F977028EE367B00004362 /* SwiftUI.framework in Frameworks */,
 				532F976E28EE367B00004362 /* WidgetKit.framework in Frameworks */,
+				66694CAFD7E9A0217D0CE2AB /* libPods-ReactNativeActivityKitExampleWidgetExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +202,7 @@
 				5DCACB8F33CDC322A6C60F78 /* libPods-ReactNativeActivityKitExample.a */,
 				532F976D28EE367B00004362 /* WidgetKit.framework */,
 				532F976F28EE367B00004362 /* SwiftUI.framework */,
+				6D2AA6F18629A1BA672ABB37 /* libPods-ReactNativeActivityKitExampleWidgetExtension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -303,6 +307,8 @@
 			children = (
 				3B4392A12AC88292D35C810B /* Pods-ReactNativeActivityKitExample.debug.xcconfig */,
 				5709B34CF0A7D63546082F79 /* Pods-ReactNativeActivityKitExample.release.xcconfig */,
+				C4001E33884CB41BAB828CD6 /* Pods-ReactNativeActivityKitExampleWidgetExtension.debug.xcconfig */,
+				9785F6C454BB2755AEEDA619 /* Pods-ReactNativeActivityKitExampleWidgetExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 532F977D28EE367C00004362 /* Build configuration list for PBXNativeTarget "ReactNativeActivityKitExampleWidgetExtension" */;
 			buildPhases = (
+				148E0A093558857926A87FF6 /* [CP] Check Pods Manifest.lock */,
 				532F976828EE367B00004362 /* Sources */,
 				532F976928EE367B00004362 /* Frameworks */,
 				532F976A28EE367B00004362 /* Resources */,
@@ -429,7 +436,6 @@
 				53EE111228EF83F200887AEE /* Apercu-Bold-Italic.otf in Resources */,
 				532F977528EE367C00004362 /* Assets.xcassets in Resources */,
 				53EE110D28EF83F200887AEE /* Apercu-Pro-Light-Italic.otf in Resources */,
-				8B0F529A668845AB9A2D739F /* Feather.ttf in Resources */,
 				53EE111128EF83F200887AEE /* Apercu-Pro-Light.otf in Resources */,
 				53EE110B28EF83F200887AEE /* Apercu-Pro-Mono.otf in Resources */,
 				53EE111928EF83F200887AEE /* Apercu-Regular.otf in Resources */,
@@ -441,7 +447,6 @@
 				53EE111728EF83F200887AEE /* Apercu-Mono.otf in Resources */,
 				53EE111B28EF83F200887AEE /* Analog-Script-Clean.otf in Resources */,
 				53EE111828EF83F200887AEE /* Apercu-Pro-Regular.otf in Resources */,
-				D8EB83CD17B74D119B35D49F /* Inter-Bold.ttf in Resources */,
 				53EE111D28EF83F200887AEE /* Apercu-Pro-Medium.otf in Resources */,
 				53EE111C28EF83F200887AEE /* Apercu-Italic.otf in Resources */,
 			);
@@ -479,6 +484,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReactNativeActivityKitExample/Pods-ReactNativeActivityKitExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		148E0A093558857926A87FF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReactNativeActivityKitExampleWidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
@@ -633,6 +660,7 @@
 		};
 		532F977B28EE367C00004362 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4001E33884CB41BAB828CD6 /* Pods-ReactNativeActivityKitExampleWidgetExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -672,6 +700,7 @@
 		};
 		532F977C28EE367C00004362 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9785F6C454BB2755AEEDA619 /* Pods-ReactNativeActivityKitExampleWidgetExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;

@@ -8,6 +8,7 @@
 import ActivityKit
 import SwiftUI
 import WidgetKit
+import ReactNativeActivityKitXC
 
 func stringToOrderStatus(_ str: String) -> OrderStatus {
   if str == "delivering" {
@@ -26,14 +27,17 @@ struct ReactNativeActivityKitExampleWidget: Widget {
     let kind: String = "ReactNativeActivityKitExampleWidget"
 
     var body: some WidgetConfiguration {
-      ActivityConfiguration(for: OrderStatusActivityAttributes.self) { context in
-        let orderStatus = stringToOrderStatus(context.state.status)
+      ActivityConfiguration(for: RNAKActivityAttributes.self) { context in
+//        let orderStatus = stringToOrderStatus(context.state.status)
         
-        OrderStatusLiveActivityView(arrivalRangeStart: context.state.arrivalRangeStart,
-                                    arrivalRangeEnd: context.state.arrivalRangeEnd,
-                                    orderStatus: orderStatus)
+        OrderStatusLiveActivityView(arrivalRangeStart: "10:00",
+                                    arrivalRangeEnd: "11:45pm",
+                                    orderStatus: .preparing)
       } dynamicIsland: { context in
-        let orderStatus = stringToOrderStatus(context.state.status)
+//        let orderStatus = stringToOrderStatus(context.state.status)
+        let orderStatus: OrderStatus = .preparing
+        let arrivalRangeStart = "10:00"
+        let arrivalRangeEnd = "11:45pm"
         
         return DynamicIsland {
           // Create the expanded view.
@@ -45,8 +49,8 @@ struct ReactNativeActivityKitExampleWidget: Widget {
 
           DynamicIslandExpandedRegion(.trailing) {
             ArrivalTimeView(label: "Arrives",
-                            arrivalRangeStart: context.state.arrivalRangeStart,
-                            arrivalRangeEnd: context.state.arrivalRangeEnd)
+                            arrivalRangeStart: arrivalRangeStart,
+                            arrivalRangeEnd: arrivalRangeEnd)
               .padding(16)
               .preferredColorScheme(.dark)
           }

@@ -2,6 +2,8 @@
 
 @interface RCT_EXTERN_MODULE(ReactNativeActivityKit, NSObject)
 
+RCT_EXTERN_METHOD(request)
+RCT_EXTERN_METHOD(end)
 RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
                  withResolver:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
