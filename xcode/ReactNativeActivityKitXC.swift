@@ -6,6 +6,8 @@ public struct RNAKActivityAttributes: ActivityAttributes {
         self.test = "Hello There!"
     }
     
+    
+    
     public typealias RNAKActivityAttributesStatus = ContentState
 
     // State : these are dynamic values that influence changes in the UI over the lifecycle of an activity

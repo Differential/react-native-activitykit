@@ -18,13 +18,14 @@ class ReactNativeActivityKit: NSObject {
                 let attributes = RNAKActivityAttributes()
                 let contentState = RNAKActivityAttributes.ContentState()
                 
-                let deliveryActivity = try Activity<RNAKActivityAttributes>.request(
+                let activity = try Activity<RNAKActivityAttributes>.request(
                     attributes: attributes,
                     contentState: contentState,
                     pushType: nil)
                 print("Starting a Live Activity")
             } catch (let error) {
                 print("Error requesting pizza delivery Live Activity \(error.localizedDescription)")
+                print(error)
             }
         }
     }
