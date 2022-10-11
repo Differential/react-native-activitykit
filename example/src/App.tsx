@@ -8,7 +8,7 @@ import {
 import { multiply } from 'react-native-activitykit';
 
 import Home from './screens/Home';
-import Order from './screens/Order';
+import Pizza from './screens/Pizza';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +23,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Order" component={Order} />
+        <Stack.Screen name="Pizza" component={Pizza} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
+import toppings, { Topping as ToppingType } from '../data/toppings';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -15,6 +17,10 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 200,
   },
+  topping: {
+    height: 48,
+    width: '100%',
+  },
 });
 
 const PIZZA_CLOSEUP =
@@ -26,6 +32,22 @@ type PizzaProps = {
   image: string;
 };
 
+type Selection = {
+  selected: boolean;
+};
+
+const ToppingOption: React.FC<ToppingType> = ({
+  name,
+  price,
+  selected,
+}: ToppingType & Selection) => {
+  return (
+    <View style={styles.topping}>
+      <Text>{name}</Text>
+    </View>
+  );
+};
+
 const Pizza = ({
   route: {
     params: { pizza },
@@ -33,33 +55,21 @@ const Pizza = ({
 }: {
   route: { params: { pizza: PizzaProps } };
 }) => {
-  const [checkedOptions, setCheckedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState([]);
   console.log(pizza);
-  const { title, image } = pizza;
-  const options = [
-    'spinich',
-    'tomato',
-    'mushrooms',
-    'garlic',
-    'super saucy',
-    'extra cheezy',
-  ];
-  const result = 'You Made It To The Order Page!';
+  const { title } = pizza;
+
   return (
     <View style={styles.container}>
       <Image source={{ uri: PIZZA_CLOSEUP }} style={styles.image} />
       <Text>{title}</Text>
-      {/* <Button title="Order" size="large" />
-      {options.map((option) => (
-        <Button
-          title=""
-          style={{
-            backgroundColor: checkedOptions.includes(option) ? 'red' : 'green',
-          }}
-          icon={'check'}
-          onPress={() => null}
+      {toppings.map((topping) => (
+        <ToppingOption
+          key={topping._id}
+          {...topping}
+          selected={selectedOptions.includes(topping.name)}
         />
-      ))} */}
+      ))}
     </View>
   );
 };

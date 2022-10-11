@@ -11,16 +11,20 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
+
 import type { StackNavigationProp } from '@react-navigation/stack';
 import type { RootStackParamList } from './RootStackParamList';
 
 import pizzas, { Pizza as PizzaType } from '../data/pizzas';
+
+// import Text from '../components/text';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#FFF',
   },
   filters: {
     flexDirection: 'row',
@@ -31,22 +35,25 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   pizzaBox: {
-    padding: 20,
+    padding: 6,
     // backgroundColor: 'blue',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 8,
+    borderColor: '#F5F2F2',
   },
   pizzaImage: {
     borderRadius: 8,
-    height: 120,
-    width: 120,
+    // height: 120,
+    width: '100%',
   },
   pizzaTitle: {
     marginTop: 8,
   },
   listContainer: {
-    marginHorizontal: 20,
+    marginHorizontal: 14,
+    width: '100%',
   },
 });
 
@@ -55,7 +62,10 @@ type OrderScreenNavigationPropType = StackNavigationProp<
   'Order'
 >;
 
-const renderPizza = ({
+const renderPizza: React.FC<{
+  item: PizzaType;
+  navigation: StackNavigationProp<RootStackParamList, 'Order'>;
+}> = ({
   item,
   navigation,
 }: {
@@ -64,7 +74,7 @@ const renderPizza = ({
 }) => {
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('Order', { pizza: item })}
+      onPress={() => navigation.navigate('Pizza', { pizza: item })}
     >
       <View style={styles.pizzaBox}>
         <Image
@@ -76,7 +86,8 @@ const renderPizza = ({
     </TouchableOpacity>
   );
 };
-const Home = () => {
+
+const Home: React.FC = () => {
   const result = 'Result!';
   const navigation = useNavigation<OrderScreenNavigationPropType>();
   return (
@@ -88,7 +99,7 @@ const Home = () => {
         renderItem={({ item }) => renderPizza({ item, navigation })}
         numColumns={2}
       />
-      <TouchableOpacity onPress={() => navigation.navigate('Order')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Pizza')}>
         <Text>{'Login'}</Text>
       </TouchableOpacity>
     </View>
