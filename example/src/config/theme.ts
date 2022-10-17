@@ -7,7 +7,9 @@ export interface Colors {
   base: string;
   bg: string;
   fg: string;
+  gluten: string;
   orderStatusBackground: string;
+  saucy: string;
   text: string;
   toastBackground: string;
 }
@@ -37,7 +39,9 @@ const theme: Theme = {
     base: BASE_COLOR,
     bg: '#FFFFFF',
     fg: '#000000',
+    gluten: '#FAEEE1',
     orderStatusBackground: ORDER_STATUS_BG,
+    saucy: '#FF0100',
     text: TEXT_COLOR,
     toastBackground: TOAST_BG,
   },
