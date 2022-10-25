@@ -1,139 +1,69 @@
+import * as React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { multiply } from 'react-native-activitykit';
 import {
-  NavigationRouteContext,
-  useNavigation,
-} from '@react-navigation/native';
-import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  TouchableOpacity,
-  Image,
-  useWindowDimensions,
-} from 'react-native';
+  Home as HomeIcon,
+  Heart as OrdersIcon,
+  User as ProfileIcon,
+} from 'react-native-feather';
 
-import type { StackNavigationProp } from '@react-navigation/stack';
-import type { RootStackParamList } from './RootStackParamList';
+import theme from '../config/theme';
+import PizzaList from './PizzaList';
+import Orders from './Orders';
+import Profile from './Profile';
 
-import pizzas, { Pizza as PizzaType } from '../data/pizzas';
+const Tabs = createBottomTabNavigator();
 
-import { Header, Pager } from '../components';
-
-// import Text from '../components/text';
-
-const LIST_MARGIN = 14;
-const ITEM_MARGIN = 6;
-
-const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-    width: '100%',
-    backgroundColor: '#FFF',
-  },
-  pizzaBox: {
-    margin: ITEM_MARGIN,
-    width: '100%',
-    height: '100%',
-  },
-  pizzaImage: {
-    borderTopLeftRadius: 8,
-    borderTopRightRadius: 8,
-    height: '100%',
-    width: '100%',
-  },
-  pizzaBorder: {
-    borderBottomLeftRadius: 8,
-    borderBottomRightRadius: 8,
-    borderColor: '#F5F2F2',
-    borderWidth: 2,
-    borderTopColor: 'transparent',
-  },
-  pizzaTitle: {
-    margin: 8,
-    // fontFamily: 'Apercu',
-    fontWeight: '400',
-    fontSize: 12,
-    lineHeight: 12,
-    color: '#0A0909',
-  },
-  listContainer: {
-    margin: LIST_MARGIN,
-    height: '100%',
-    width: '100%',
-  },
-});
-
-type OrderScreenNavigationPropType = StackNavigationProp<
-  RootStackParamList,
-  'Order'
->;
-
-const renderPizza: React.FC<{
-  item: PizzaType;
-  navigation: StackNavigationProp<RootStackParamList, 'Order'>;
-  size: number;
-}> = ({
-  item,
-  navigation,
-  size,
-}: {
-  item: PizzaType;
-  navigation: OrderScreenNavigationPropType;
-  size: number;
-}) => {
-  return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate('Pizza', { pizza: item })}
-    >
-      <View style={[styles.pizzaBox, { width: size, height: size + 28 }]}>
-        <Image
-          style={[styles.pizzaImage, { width: size, height: size }]}
-          source={{ uri: item.image }}
-        />
-        <View style={styles.pizzaBorder}>
-          <Text style={styles.pizzaTitle}>{item.title}</Text>
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
+type Topping = {
+  _id: string;
+  name: string;
+  price: number;
 };
 
-const Home: React.FC = () => {
-  const [page, setPage] = useState<number>(0);
-  const navigation = useNavigation<OrderScreenNavigationPropType>();
-  const { width } = useWindowDimensions();
-  const pizzaSize = (width - LIST_MARGIN * 2 - ITEM_MARGIN * 4 - 8) / 2;
+type CartItem = {
+  quantity: number;
+  description: string;
+  toppings: Topping[];
+};
+
+export default function Home() {
+  const [result, setResult] = React.useState<number | undefined>();
+  const [cart, setCart] = React.useState<CartItem[]>([]);
+
+  React.useEffect(() => {
+    multiply(3, 7).then(setResult);
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Header />
-      <Pager
-        pages={[
-          {
-            title: 'Pizzas',
-            content: (
-              <FlatList
-                contentContainerStyle={styles.listContainer}
-                data={pizzas}
-                renderItem={({ item }) =>
-                  renderPizza({ item, navigation, size: pizzaSize })
-                }
-                numColumns={2}
-              />
-            ),
-          },
-          {
-            title: 'Calzones',
-            content: <View />,
-          },
-        ]}
+    <Tabs.Navigator screenOptions={{ headerShown: false }}>
+      <Tabs.Screen
+        name="Menu"
+        component={PizzaList}
+        options={() => ({
+          tabBarIcon: ({ color }) => <HomeIcon color={color} />,
+          tabBarActiveTintColor: theme.colors.saucy,
+          tabBarInactiveTintColor: 'gray',
+        })}
       />
-
-      <TouchableOpacity onPress={() => navigation.navigate('Pizza')}>
-        <Text>{'Login'}</Text>
-      </TouchableOpacity>
-    </View>
+      <Tabs.Screen
+        name="Orders"
+        component={Orders}
+        options={() => ({
+          tabBarIcon: ({ color }) => <OrdersIcon color={color} />,
+          tabBarActiveTintColor: theme.colors.saucy,
+          tabBarInactiveTintColor: 'gray',
+        })}
+      />
+      <Tabs.Screen
+        name="Profile"
+        component={Profile}
+        options={() => ({
+          tabBarIcon: ({ color }) => <ProfileIcon color={color} />,
+          tabBarActiveTintColor: theme.colors.saucy,
+          tabBarInactiveTintColor: 'gray',
+        })}
+      />
+    </Tabs.Navigator>
   );
-};
-
-export default Home;
+}

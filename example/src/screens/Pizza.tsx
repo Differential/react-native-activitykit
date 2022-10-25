@@ -1,12 +1,27 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { X as CloseIcon } from 'react-native-feather';
+import { useNavigation } from '@react-navigation/native';
 
 import toppings, { Topping as ToppingType } from '../data/toppings';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    // alignItems: 'center',
+  },
+  content: {
+    marginTop: 20,
+    marginHorizontal: 20,
+  },
+  title: {
+    fontWeight: '700',
+    fontSize: 30,
+  },
+  description: {
+    color: '#727070',
+    fontSize: 12,
+    marginBottom: 8,
   },
   box: {
     width: 60,
@@ -21,6 +36,11 @@ const styles = StyleSheet.create({
     height: 48,
     width: '100%',
   },
+  closeIcon: {
+    position: 'absolute',
+    top: 50,
+    right: 20,
+  },
 });
 
 const PIZZA_CLOSEUP =
@@ -30,6 +50,7 @@ type PizzaProps = {
   _id: string;
   title: string;
   image: string;
+  description: string;
 };
 
 type Selection = {
@@ -57,19 +78,29 @@ const Pizza = ({
 }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   console.log(pizza);
-  const { title } = pizza;
+  const { title, description } = pizza;
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <Image source={{ uri: PIZZA_CLOSEUP }} style={styles.image} />
-      <Text>{title}</Text>
-      {toppings.map((topping) => (
-        <ToppingOption
-          key={topping._id}
-          {...topping}
-          selected={selectedOptions.includes(topping.name)}
-        />
-      ))}
+      <View style={styles.content}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.description}>{description}</Text>
+        {toppings.map((topping) => (
+          <ToppingOption
+            key={topping._id}
+            {...topping}
+            selected={selectedOptions.includes(topping.name)}
+          />
+        ))}
+      </View>
+      <TouchableOpacity
+        style={styles.closeIcon}
+        onPress={() => navigation.goBack()}
+      >
+        <CloseIcon color={'white'} />
+      </TouchableOpacity>
     </View>
   );
 };
