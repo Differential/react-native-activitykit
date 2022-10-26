@@ -9,7 +9,7 @@ import {
   GestureResponderEvent,
 } from 'react-native';
 import { X as CloseIcon } from 'react-native-feather';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -106,7 +106,7 @@ const renderTopping: React.FC<{
   );
 };
 
-const Pizza = ({
+const Cart = ({
   route: {
     params: { pizza },
   },
@@ -121,7 +121,14 @@ const Pizza = ({
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ pizza, selectedOptions }));
+    dispatch(
+      addToCart({
+        pizza,
+        toppings: toppings.filter((t: ToppingType) =>
+          selectedOptions.includes(t.name)
+        ),
+      })
+    );
     navigation.goBack();
   };
 
@@ -188,4 +195,4 @@ const Pizza = ({
   );
 };
 
-export default Pizza;
+export default Cart;

@@ -14,9 +14,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  content: {
-    marginTop: 60,
-  },
   tabBar: {
     flex: 1,
     flexDirection: 'row',
@@ -91,7 +88,7 @@ const Pager = ({ pages }: PagerProps) => {
           );
         })}
       </View>
-      <View style={styles.content}>{currentPage.content}</View>
+      {currentPage.content}
     </View>
   );
 };

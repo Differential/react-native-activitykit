@@ -4,7 +4,7 @@ import type { CartItem } from '../config/types';
 
 // STATE
 
-type CartState = {
+export type CartState = {
   cart: CartItem[];
 };
 

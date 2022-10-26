@@ -18,7 +18,7 @@ import type { RootStackParamList } from './RootStackParamList';
 
 import pizzas, { Pizza as PizzaType } from '../data/pizzas';
 
-import { Header, Pager } from '../components';
+import { CartButton, Header, Pager } from '../components';
 
 // import Text from '../components/text';
 
@@ -61,6 +61,12 @@ const styles = StyleSheet.create({
     margin: LIST_MARGIN,
     height: '100%',
     width: '100%',
+    marginTop: 60,
+  },
+  cart: {
+    position: 'absolute',
+    right: 20,
+    top: 60,
   },
 });
 
@@ -132,6 +138,9 @@ const PizzaList: React.FC = () => {
       <TouchableOpacity onPress={() => navigation.navigate('Pizza')}>
         <Text>{'Login'}</Text>
       </TouchableOpacity>
+      <View style={styles.cart}>
+        <CartButton />
+      </View>
     </View>
   );
 };

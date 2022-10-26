@@ -8,7 +8,6 @@ export const APPBAR_HEIGHT = 44;
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: 'red',
     backgroundColor: theme.colors.gluten,
     height: 200,
     justifyContent: 'center',
@@ -18,7 +17,6 @@ const styles = StyleSheet.create({
 });
 
 const Header = () => {
-  console.log(theme.colors.gluten);
   return (
     <View style={styles.container}>
       <Logo />

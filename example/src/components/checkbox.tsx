@@ -1,45 +1,60 @@
 import React from 'react';
-import { StyleSheet, View, TouchableWithoutFeedback } from 'react-native';
-import styled from 'styled-components';
+import { StyleSheet, View } from 'react-native';
+import { Check } from 'react-native-feather';
 
-import Icon from '/app/ui-kit/icon';
-
-import Colors from '/app/ui-kit/colors';
-import { baseUnit } from '/app/config/position';
+import theme from '../config/theme';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  circle: {
-    backgroundColor: Colors.font.tertiary,
+  border: {
+    backgroundColor: '#FFF',
+    borderColor: '#E5E3E3',
+    borderWidth: 2,
+    borderRadius: 8,
+  },
+  checked: {
+    borderWidth: 2,
+    borderRadius: 8,
+  },
+  position: {
+    position: 'absolute',
+    alignSelf: 'center',
+    justifySelf: 'center',
+    paddingTop: 2,
   },
 });
 
+type Props = {
+  size?: number;
+  color?: string;
+  checked: boolean;
+};
+
 const Checkbox = ({
-  size = baseUnit(4),
-  color = Colors.font.brand,
-  onValueChange,
+  size = 30,
+  color = theme.colors.saucy,
   checked,
-}) => {
+}: Props) => {
   const renderUnchecked = () => (
-    <View
-      style={[
-        styles.circle,
-        { height: size, width: size, borderRadius: size / 2 },
-      ]}
-    />
+    <View style={[styles.border, { height: size, width: size }]} />
   );
 
   const renderChecked = () => (
-    <Icon.CheckCircleSolid color={color} size={size} />
+    <View
+      style={[
+        styles.border,
+        { height: size, width: size, backgroundColor: color },
+      ]}
+    >
+      <View style={styles.position}>
+        <Check color={'#FFF'} />
+      </View>
+    </View>
   );
 
-  return (
-    <TouchableWithoutFeedback style={styles.container} onPress={onValueChange}>
-      {checked ? renderChecked() : renderUnchecked()}
-    </TouchableWithoutFeedback>
-  );
+  return checked ? renderChecked() : renderUnchecked();
 };
 
-export { Checkbox as default };
+export default Checkbox;
