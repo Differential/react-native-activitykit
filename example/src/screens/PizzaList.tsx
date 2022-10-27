@@ -1,8 +1,5 @@
-import {
-  NavigationRouteContext,
-  useNavigation,
-} from '@react-navigation/native';
-import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
 import {
   View,
   Text,
@@ -106,7 +103,6 @@ const renderPizza: React.FC<{
 };
 
 const PizzaList: React.FC = () => {
-  const [page, setPage] = useState<number>(0);
   const navigation = useNavigation<OrderScreenNavigationPropType>();
   const { width } = useWindowDimensions();
   const pizzaSize = (width - LIST_MARGIN * 2 - ITEM_MARGIN * 4 - 8) / 2;

@@ -15,21 +15,8 @@ import Profile from './Profile';
 
 const Tabs = createBottomTabNavigator();
 
-type Topping = {
-  _id: string;
-  name: string;
-  price: number;
-};
-
-type CartItem = {
-  quantity: number;
-  description: string;
-  toppings: Topping[];
-};
-
 export default function Home() {
   const [result, setResult] = React.useState<number | undefined>();
-  const [cart, setCart] = React.useState<CartItem[]>([]);
 
   React.useEffect(() => {
     multiply(3, 7).then(setResult);

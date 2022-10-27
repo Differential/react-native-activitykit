@@ -9,17 +9,19 @@ import {
   GestureResponderEvent,
 } from 'react-native';
 import { X as CloseIcon } from 'react-native-feather';
-import { useSelector, useDispatch } from 'react-redux';
 
 import { useNavigation } from '@react-navigation/native';
 
-import { addToCart } from '../store/actions';
+import { addToCart } from '../store/cart';
+
 import type {
+  CartItem,
   Pizza as PizzaType,
   Topping as ToppingType,
 } from '../config/types';
 import toppings from '../data/toppings';
 import { Button, Checkbox, Pager } from '../components';
+import { useAppDispatch } from '../store/hooks';
 
 const styles = StyleSheet.create({
   container: {
@@ -118,10 +120,21 @@ const Pizza = ({
     useState<string[]>(emptyOptions);
   const { title, description } = pizza;
   const navigation = useNavigation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ pizza, selectedOptions }));
+    const selectedToppings: ToppingType[] = toppings.filter((t: ToppingType) =>
+      selectedOptions.includes(t.name)
+    );
+
+    const cartItem: CartItem = {
+      pizza,
+      toppings: selectedToppings,
+      price: 20,
+      quantity: 1,
+    };
+
+    dispatch(addToCart(cartItem));
     navigation.goBack();
   };
 

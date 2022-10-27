@@ -1,35 +1,36 @@
-import { ADD_TO_CART } from './actions';
-
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { CartItem } from '../config/types';
 
-// STATE
+import type { RootState } from '../store';
 
-export type CartState = {
+// Define a type for the slice state
+interface CartState {
   cart: CartItem[];
-};
+}
 
-type CartAction = {
-  type: string;
-  payload: CartItem;
-};
-
+// Define the initial state using that type
 const initialState: CartState = {
   cart: [],
 };
 
-// REDUCERS
+export const cartSlice = createSlice({
+  name: 'cart',
+  // `createSlice` will infer the state type from the `initialState` argument
+  initialState,
+  reducers: {
+    // Use the PayloadAction type to declare the contents of `action.payload`
+    addToCart: (state, action: PayloadAction<CartItem>) => {
+      state.cart.push(action.payload);
+    },
+    clearCart: (state) => {
+      state.cart = [];
+    },
+  },
+});
 
-export default function cart(state = initialState, action: CartAction) {
-  let newCart;
-  switch (action.type) {
-    case ADD_TO_CART:
-      newCart = [...state.cart, action.payload];
-      return {
-        ...state,
-        cart: newCart,
-      };
+export const { addToCart, clearCart } = cartSlice.actions;
 
-    default:
-      return state;
-  }
-}
+// Other code such as selectors can use the imported `RootState` type
+export const selectCart = (state: RootState) => state.cart.cart;
+
+export default cartSlice.reducer;
