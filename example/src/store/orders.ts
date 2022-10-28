@@ -23,10 +23,24 @@ export const orderSlice = createSlice({
     createOrder: (state, action: PayloadAction<Order>) => {
       state.orders.push(action.payload);
     },
+    updateOrderStatus: (state, action: PayloadAction<Order>) => {
+      return {
+        ...state,
+        orders: state.orders.map((order) => {
+          if (order.orderId !== action.payload.orderId) {
+            return order;
+          }
+          return {
+            ...order,
+            status: action.payload.status,
+          };
+        }),
+      };
+    },
   },
 });
 
-export const { createOrder } = orderSlice.actions;
+export const { createOrder, updateOrderStatus } = orderSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectOrders = (state: RootState) => state.orders.orders;

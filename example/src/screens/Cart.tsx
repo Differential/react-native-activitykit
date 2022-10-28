@@ -7,7 +7,7 @@ import {
   FlatList,
 } from 'react-native';
 import { X as CloseIcon } from 'react-native-feather';
-import { requestActivity } from 'react-native-activitykit';
+import { startActivity } from 'react-native-activitykit';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { useNavigation } from '@react-navigation/native';
 import { createOrder } from '../store/orders';
@@ -85,14 +85,15 @@ const Cart = () => {
   const nextOrderId = orderIds.length > 0 ? Math.max(...orderIds) + 1 : 1;
 
   const handleCheckout = () => {
+    const activityId = startActivity({ status: 'preparing' });
     const order: Order = {
+      activityId,
       orderId: nextOrderId,
       items: cart,
       total: 20,
       status: 'preparing',
     };
     dispatch(createOrder(order));
-    requestActivity();
     dispatch(clearCart());
     navigation.goBack();
   };

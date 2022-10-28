@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { requestActivity, endActivity } from 'react-native-activitykit'
 
-import { multiply } from 'react-native-activitykit';
 import {
   Home as HomeIcon,
   Heart as OrdersIcon,
@@ -17,23 +15,6 @@ import Profile from './Profile';
 const Tabs = createBottomTabNavigator();
 
 export default function Home() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
-
-  function handleRequest() {
-    console.log("Requesting Live Activity")
-    requestActivity()
-  }
-
-  function handleEnd() {
-    console.log("Ending Live Activity")
-    endActivity()
-  }
   return (
     <Tabs.Navigator screenOptions={{ headerShown: false }}>
       <Tabs.Screen

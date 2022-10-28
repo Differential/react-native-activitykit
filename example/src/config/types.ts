@@ -21,6 +21,7 @@ export type CartItem = {
 };
 
 export type Order = {
+  activityId: string;
   orderId: number;
   items: CartItem[];
   total: number;
