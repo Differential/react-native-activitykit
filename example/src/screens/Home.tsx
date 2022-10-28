@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { requestActivity, endActivity } from 'react-native-activitykit'
 
 import { multiply } from 'react-native-activitykit';
 import {
@@ -23,6 +24,16 @@ export default function Home() {
     multiply(3, 7).then(setResult);
   }, []);
 
+
+  function handleRequest() {
+    console.log("Requesting Live Activity")
+    requestActivity()
+  }
+
+  function handleEnd() {
+    console.log("Ending Live Activity")
+    endActivity()
+  }
   return (
     <Tabs.Navigator screenOptions={{ headerShown: false }}>
       <Tabs.Screen

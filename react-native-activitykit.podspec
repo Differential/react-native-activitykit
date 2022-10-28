@@ -32,4 +32,7 @@ Pod::Spec.new do |s|
     s.dependency "RCTTypeSafety"
     s.dependency "ReactCommon/turbomodule/core"
   end
+
+  # The Native ReactNativeActivityKit XCFramework from cocoapods.
+  s.dependency 'ReactNativeActivityKitXC'
 end

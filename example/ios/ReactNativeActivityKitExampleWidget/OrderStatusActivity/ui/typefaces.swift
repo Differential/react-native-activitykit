@@ -7,6 +7,10 @@
 
 import SwiftUI
 
-let HeadlineFont = Font.custom("Apercu-Bold", size: 17)
-let SubheadlineFont = Font.custom("Apercu-Medium", size: 15)
-let TitleFont = Font.custom("Analog Script Clean PERSONAL", size: 27)
+//let HeadlineFont = Font.custom("Apercu-Bold", size: 17)
+//let SubheadlineFont = Font.custom("Apercu-Medium", size: 15)
+//let TitleFont = Font.custom("Analog Script Clean PERSONAL", size: 27)
+
+let HeadlineFont = Font.headline
+let SubheadlineFont = Font.subheadline
+let TitleFont = Font.title
