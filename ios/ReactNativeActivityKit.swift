@@ -10,21 +10,22 @@ class ReactNativeActivityKit: NSObject {
         resolve(a*b)
     }
     
-    @objc(request)
-    func request() {
+    @objc(request:attributesJSON:)
+    func request(stateJSON: String, attributesJSON: String) {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             do {
-                let attributes = RNAKActivityAttributes()
-                let contentState = RNAKActivityAttributes.ContentState()
+                let attributes = RNAKActivityAttributes(jsonString: attributesJSON)
+                let contentState = RNAKActivityAttributes.ContentState(jsonString: stateJSON)
                 
                 let activity = try Activity<RNAKActivityAttributes>.request(
                     attributes: attributes,
                     contentState: contentState,
                     pushType: nil)
+                
                 print("Starting a Live Activity")
             } catch (let error) {
-                print("Error requesting pizza delivery Live Activity \(error.localizedDescription)")
+                print("Error requesting React Native ActivityKit Live Activity \(error.localizedDescription)")
                 print(error)
             }
         }
