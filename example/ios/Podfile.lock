@@ -378,6 +378,8 @@ PODS:
   - RNScreens (3.18.0):
     - React-Core
     - React-RCTImage
+  - RNSVG (13.4.0):
+    - React-Core
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -445,6 +447,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeActivityKitXC (from `../..`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -537,6 +540,8 @@ EXTERNAL SOURCES:
     :path: "../.."
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -590,6 +595,7 @@ SPEC CHECKSUMS:
   ReactCommon: 095366164a276d91ea704ce53cb03825c487a3f2
   ReactNativeActivityKitXC: 501ec1c465bea59c4c282595a8307fd2d24cd397
   RNScreens: f3230dd008a7d0ce5c0a8bc78ff12cf2315bda24
+  RNSVG: 07dbd870b0dcdecc99b3a202fa37c8ca163caec2
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 99652481fcd320aefa4a7ef90095b95acd181952
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

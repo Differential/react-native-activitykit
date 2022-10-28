@@ -1,30 +1,43 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import {
-  createNativeStackNavigator,
-  NativeStackNavigationProp,
-} from '@react-navigation/native-stack';
-
-import { multiply } from 'react-native-activitykit';
-
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Provider } from 'react-redux';
+import type { Pizza as PizzaType } from './config/types';
 import Home from './screens/Home';
-import Order from './screens/Order';
+import Pizza from './screens/Pizza';
+import Cart from './screens/Cart';
+import store from './store';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  Home: undefined;
+  Pizza: { pizza: PizzaType };
+  Cart: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Order" component={Order} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Pizza"
+            component={Pizza}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Cart"
+            component={Cart}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
