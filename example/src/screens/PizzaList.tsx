@@ -10,14 +10,14 @@ import {
   useWindowDimensions,
 } from 'react-native';
 
-import type { StackNavigationProp } from '@react-navigation/stack';
-import type { RootStackParamList } from './RootStackParamList';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+
+import type { RootStackParamList } from '../App';
 
 import pizzas, { Pizza as PizzaType } from '../data/pizzas';
 
 import { CartButton, Header, Pager } from '../components';
-
-// import Text from '../components/text';
+import theme from '../config/theme';
 
 const LIST_MARGIN = 14;
 const ITEM_MARGIN = 6;
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
     width: '100%',
-    backgroundColor: '#FFF',
+    backgroundColor: theme.colors.bg,
   },
   pizzaBox: {
     margin: ITEM_MARGIN,
@@ -42,9 +42,9 @@ const styles = StyleSheet.create({
   pizzaBorder: {
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
-    borderColor: '#F5F2F2',
+    borderColor: theme.colors.lighterGray,
     borderWidth: 2,
-    borderTopColor: 'transparent',
+    borderTopColor: theme.colors.transparent,
   },
   pizzaTitle: {
     margin: 8,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 12,
     lineHeight: 12,
-    color: '#0A0909',
+    color: theme.colors.text,
   },
   listContainer: {
     margin: LIST_MARGIN,
@@ -67,14 +67,14 @@ const styles = StyleSheet.create({
   },
 });
 
-type OrderScreenNavigationPropType = StackNavigationProp<
+type PizzaScreenNavigationPropType = NativeStackScreenProps<
   RootStackParamList,
-  'Order'
+  'Pizza'
 >;
 
 const renderPizza: React.FC<{
   item: PizzaType;
-  navigation: StackNavigationProp<RootStackParamList, 'Order'>;
+  navigation: NativeStackScreenProps<RootStackParamList, 'Pizza'>;
   size: number;
 }> = ({
   item,
@@ -82,7 +82,7 @@ const renderPizza: React.FC<{
   size,
 }: {
   item: PizzaType;
-  navigation: OrderScreenNavigationPropType;
+  navigation: NativeStackScreenProps<RootStackParamList, 'Pizza'>;
   size: number;
 }) => {
   return (
@@ -103,7 +103,7 @@ const renderPizza: React.FC<{
 };
 
 const PizzaList: React.FC = () => {
-  const navigation = useNavigation<OrderScreenNavigationPropType>();
+  const navigation = useNavigation<PizzaScreenNavigationPropType>();
   const { width } = useWindowDimensions();
   const pizzaSize = (width - LIST_MARGIN * 2 - ITEM_MARGIN * 4 - 8) / 2;
   return (

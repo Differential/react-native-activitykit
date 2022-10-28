@@ -22,11 +22,11 @@ import type {
 import toppings from '../data/toppings';
 import { Button, Checkbox, Pager } from '../components';
 import { useAppDispatch } from '../store/hooks';
+import theme from '../config/theme';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: 'center',
   },
   content: {
     marginTop: 20,
@@ -37,14 +37,9 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   description: {
-    color: '#727070',
+    color: theme.colors.description,
     fontSize: 12,
     marginBottom: 24,
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
   },
   image: {
     width: '100%',
@@ -55,13 +50,13 @@ const styles = StyleSheet.create({
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    backgroundColor: '#FFF',
+    backgroundColor: theme.colors.bg,
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 16,
   },
   toppingText: {
-    color: '#090A0A',
+    color: theme.colors.text,
     fontSize: 16,
   },
   closeIcon: {

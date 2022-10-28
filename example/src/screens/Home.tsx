@@ -16,6 +16,7 @@ import Profile from './Profile';
 const Tabs = createBottomTabNavigator();
 
 export default function Home() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [result, setResult] = React.useState<number | undefined>();
 
   React.useEffect(() => {

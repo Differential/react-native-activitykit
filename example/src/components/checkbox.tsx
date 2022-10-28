@@ -5,16 +5,9 @@ import { Check } from 'react-native-feather';
 import theme from '../config/theme';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   border: {
-    backgroundColor: '#FFF',
-    borderColor: '#E5E3E3',
-    borderWidth: 2,
-    borderRadius: 8,
-  },
-  checked: {
+    backgroundColor: theme.colors.bg,
+    borderColor: theme.colors.lightGray,
     borderWidth: 2,
     borderRadius: 8,
   },
@@ -49,7 +42,7 @@ const Checkbox = ({
       ]}
     >
       <View style={styles.position}>
-        <Check color={'#FFF'} />
+        <Check color={theme.colors.bg} />
       </View>
     </View>
   );
