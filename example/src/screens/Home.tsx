@@ -1,38 +1,57 @@
-import {
-  NavigationRouteContext,
-  useNavigation,
-} from '@react-navigation/native';
 import * as React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import type { StackNavigationProp } from '@react-navigation/stack';
-import type { RootStackParamList } from './RootStackParamList';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
+import { multiply } from 'react-native-activitykit';
+import {
+  Home as HomeIcon,
+  Heart as OrdersIcon,
+  User as ProfileIcon,
+} from 'react-native-feather';
 
-type orderScreenProp = StackNavigationProp<RootStackParamList, 'Order'>;
+import theme from '../config/theme';
+import PizzaList from './PizzaList';
+import Orders from './Orders';
+import Profile from './Profile';
 
-const Home = () => {
-  const result = 'Result!';
-  const navigation = useNavigation<orderScreenProp>();
+const Tabs = createBottomTabNavigator();
+
+export default function Home() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [result, setResult] = React.useState<number | undefined>();
+
+  React.useEffect(() => {
+    multiply(3, 7).then(setResult);
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-      <TouchableOpacity onPress={() => navigation.navigate('Order')}>
-        <Text>{'Login'}</Text>
-      </TouchableOpacity>
-    </View>
+    <Tabs.Navigator screenOptions={{ headerShown: false }}>
+      <Tabs.Screen
+        name="Menu"
+        component={PizzaList}
+        options={() => ({
+          tabBarIcon: ({ color }) => <HomeIcon color={color} />,
+          tabBarActiveTintColor: theme.colors.saucy,
+          tabBarInactiveTintColor: 'gray',
+        })}
+      />
+      <Tabs.Screen
+        name="Orders"
+        component={Orders}
+        options={() => ({
+          tabBarIcon: ({ color }) => <OrdersIcon color={color} />,
+          tabBarActiveTintColor: theme.colors.saucy,
+          tabBarInactiveTintColor: 'gray',
+        })}
+      />
+      <Tabs.Screen
+        name="Profile"
+        component={Profile}
+        options={() => ({
+          tabBarIcon: ({ color }) => <ProfileIcon color={color} />,
+          tabBarActiveTintColor: theme.colors.saucy,
+          tabBarInactiveTintColor: 'gray',
+        })}
+      />
+    </Tabs.Navigator>
   );
-};
-
-export default Home;
+}

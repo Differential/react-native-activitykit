@@ -29,7 +29,8 @@
     "prettify": "prettier --write example",
     "release": "release-it",
     "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn && yarn example pods"
+    "bootstrap": "yarn example && yarn && yarn example pods",
+    "start": "cd example && yarn start"
   },
   "keywords": [
     "react-native",
@@ -152,5 +153,12 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.6",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-native": "^4.0.0",
+    "react-redux": "^8.0.4",
+    "redux": "^4.2.0"
   }
 }
