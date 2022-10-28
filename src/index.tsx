@@ -25,14 +25,17 @@ export function startActivity(
   state: Record<string, unknown>,
   attributes: Record<string, unknown> = {}
 ): string {
-  return ReactNativeActivityKit.request(state, attributes);
+  return ReactNativeActivityKit.request(
+    JSON.stringify(state),
+    JSON.stringify(attributes)
+  );
 }
 
 export function updateActivity(
   identifier: string,
   state: Record<string, unknown>
 ) {
-  ReactNativeActivityKit.update(identifier, state);
+  ReactNativeActivityKit.update(identifier, JSON.stringify(state));
 }
 
 export function endActivity(identifier: string) {
