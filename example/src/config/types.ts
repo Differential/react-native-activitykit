@@ -1,4 +1,4 @@
-type OrderStatus = 'placed';
+type OrderStatus = 'preparing' | 'delivering' | 'completed';
 
 export type Pizza = {
   _id: string;
@@ -21,6 +21,7 @@ export type CartItem = {
 };
 
 export type Order = {
+  orderId: number;
   items: CartItem[];
   total: number;
   status: OrderStatus;
