@@ -137,7 +137,6 @@ const Pizza = ({
     ...t,
     selected: selectedOptions.includes(t.name),
   }));
-  console.log(toppingsList);
 
   const toggleOption = (name: string) => {
     const isSelected = selectedOptions.includes(name);

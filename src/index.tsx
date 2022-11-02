@@ -9,22 +9,35 @@ const LINKING_ERROR =
 const ReactNativeActivityKit = NativeModules.ReactNativeActivityKit
   ? NativeModules.ReactNativeActivityKit
   : new Proxy(
-    {},
-    {
-      get() {
-        throw new Error(LINKING_ERROR);
-      },
-    }
-  );
+      {},
+      {
+        get() {
+          throw new Error(LINKING_ERROR);
+        },
+      }
+    );
 
 export function multiply(a: number, b: number): Promise<number> {
   return ReactNativeActivityKit.multiply(a, b);
 }
 
-export function requestActivity() {
-  ReactNativeActivityKit.request();
+export function startActivity(
+  state: Record<string, unknown>,
+  attributes: Record<string, unknown> = {}
+): string {
+  return ReactNativeActivityKit.request(
+    JSON.stringify(state),
+    JSON.stringify(attributes)
+  );
 }
 
-export function endActivity() {
-  ReactNativeActivityKit.end();
+export function updateActivity(
+  identifier: string,
+  state: Record<string, unknown>
+) {
+  ReactNativeActivityKit.update(identifier, JSON.stringify(state));
+}
+
+export function endActivity(identifier: string) {
+  ReactNativeActivityKit.end(identifier);
 }
