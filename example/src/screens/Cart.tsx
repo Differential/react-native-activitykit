@@ -7,6 +7,7 @@ import {
   FlatList,
 } from 'react-native';
 import { X as CloseIcon } from 'react-native-feather';
+import { startActivity } from 'react-native-activitykit';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { useNavigation } from '@react-navigation/native';
 import { createOrder } from '../store/orders';
@@ -21,7 +22,6 @@ import theme from '../config/theme';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: 'center',
   },
   header: {
     marginTop: 60,
@@ -79,12 +79,19 @@ const Cart = () => {
   const navigation = useNavigation();
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cart.cart);
+  const orderIds = useAppSelector((state) =>
+    state.orders.orders.map((o) => o.orderId)
+  );
+  const nextOrderId = orderIds.length > 0 ? Math.max(...orderIds) + 1 : 1;
 
   const handleCheckout = () => {
+    const activityId = startActivity({ status: 'preparing' });
     const order: Order = {
+      activityId,
+      orderId: nextOrderId,
       items: cart,
       total: 20,
-      status: 'placed',
+      status: 'preparing',
     };
     dispatch(createOrder(order));
     dispatch(clearCart());

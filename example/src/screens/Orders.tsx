@@ -58,8 +58,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const renderItem = ({ item }: { item: Order }) => (
-  <View style={styles.topping}>
+const renderItem = ({ item, navigation }: { item: Order; navigation: any }) => (
+  <TouchableOpacity
+    style={styles.topping}
+    onPress={() => navigation.navigate('Order', { order: item })}
+  >
     {item.items.map((i) => {
       return (
         <Text key={i.pizza.title} style={styles.toppingText}>
@@ -68,7 +71,7 @@ const renderItem = ({ item }: { item: Order }) => (
       );
     })}
     <Text style={styles.toppingText}>{item.status}</Text>
-  </View>
+  </TouchableOpacity>
 );
 
 const Orders = () => {
@@ -89,7 +92,10 @@ const Orders = () => {
         <Text style={styles.description}>{'Track your orders!'}</Text>
       </View>
       <View style={styles.list}>
-        <FlatList data={orders} renderItem={renderItem} />
+        <FlatList
+          data={orders}
+          renderItem={({ item }) => renderItem({ item, navigation })}
+        />
       </View>
     </View>
   );

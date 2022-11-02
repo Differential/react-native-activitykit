@@ -10,10 +10,6 @@ import {
   useWindowDimensions,
 } from 'react-native';
 
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-
-import type { RootStackParamList } from '../App';
-
 import pizzas, { Pizza as PizzaType } from '../data/pizzas';
 
 import { CartButton, Header, Pager } from '../components';
@@ -48,7 +44,6 @@ const styles = StyleSheet.create({
   },
   pizzaTitle: {
     margin: 8,
-    // fontFamily: 'Apercu',
     fontWeight: '400',
     fontSize: 12,
     lineHeight: 12,
@@ -67,14 +62,9 @@ const styles = StyleSheet.create({
   },
 });
 
-type PizzaScreenNavigationPropType = NativeStackScreenProps<
-  RootStackParamList,
-  'Pizza'
->;
-
 const renderPizza: React.FC<{
   item: PizzaType;
-  navigation: NativeStackScreenProps<RootStackParamList, 'Pizza'>;
+  navigation: any;
   size: number;
 }> = ({
   item,
@@ -82,7 +72,7 @@ const renderPizza: React.FC<{
   size,
 }: {
   item: PizzaType;
-  navigation: NativeStackScreenProps<RootStackParamList, 'Pizza'>;
+  navigation: any;
   size: number;
 }) => {
   return (
@@ -103,7 +93,7 @@ const renderPizza: React.FC<{
 };
 
 const PizzaList: React.FC = () => {
-  const navigation = useNavigation<PizzaScreenNavigationPropType>();
+  const navigation = useNavigation<any>();
   const { width } = useWindowDimensions();
   const pizzaSize = (width - LIST_MARGIN * 2 - ITEM_MARGIN * 4 - 8) / 2;
   return (
@@ -130,7 +120,6 @@ const PizzaList: React.FC = () => {
           },
         ]}
       />
-
       <TouchableOpacity onPress={() => navigation.navigate('Pizza')}>
         <Text>{'Login'}</Text>
       </TouchableOpacity>
