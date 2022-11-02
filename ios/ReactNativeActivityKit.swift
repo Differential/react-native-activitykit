@@ -31,15 +31,16 @@ class ReactNativeActivityKit: NSObject {
         }
     }
     
-    @objc(end)
-    func end() {
+    @objc(end:)
+    func end(id: String) {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
-                let activityStream = Activity<RNAKActivityAttributes>.activities
-                
-                for deliveryActivity in activityStream {
-                    await deliveryActivity.end()
+                if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
+                    return activity.id == id
+                }) {
+                    // todo : figure out how to support concurency here
+                    await activity.end()
                 }
             }
         }
