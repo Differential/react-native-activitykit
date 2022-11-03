@@ -16,7 +16,7 @@ import { clearCart } from '../store/cart';
 import Name from '../../assets/images/name.svg';
 
 import type { CartItem, Order } from '../config/types';
-import { Button } from '../components';
+import { Button, HelperBox } from '../components';
 import theme from '../config/theme';
 
 const styles = StyleSheet.create({
@@ -67,6 +67,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
+  helper: {
+    position: 'absolute',
+    bottom: 160,
+    alignSelf: 'center',
+  },
 });
 
 const renderItem = ({ item }: { item: CartItem }) => (
@@ -86,7 +91,7 @@ const Cart = () => {
 
   const handleCheckout = async () => {
     const activity = await startActivity({ status: 'preparing' });
-    console.log({ activity })
+    console.log({ activity });
     const order: Order = {
       activityId: activity.id,
       orderId: nextOrderId,
@@ -122,7 +127,10 @@ const Cart = () => {
           text={'Back'}
           onPress={() => navigation.goBack()}
         />
-        <Button text={'Checkout'} onPress={handleCheckout} />
+        <Button text={'Order!'} onPress={handleCheckout} />
+      </View>
+      <View style={styles.helper}>
+        <HelperBox text={'Ready to order!'} />
       </View>
     </View>
   );
