@@ -49,16 +49,13 @@ class ReactNativeActivityKit: NSObject {
                 // todo : figure out a better, more "Swifty" way to do this
                 resolve(encodeActivityToString(activity: activity))
             } catch (let error) {
-                print("Error requesting React Native ActivityKit Live Activity \(error.localizedDescription)")
-                print(error)
-                // code, message, error
-//                reject(<#String?#>, <#String?#>, <#Error?#>)
+                reject(nil, nil, error)
             }
         }
     }
     
     @objc(end:withResolver:withRejecter:)
-    func end(activityId: String, resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) -> Void {
+    func end(activityId: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
@@ -68,29 +65,27 @@ class ReactNativeActivityKit: NSObject {
                     await activity.end(dismissalPolicy: .immediate)
                     resolve(encodeActivityToString(activity: activity))
                 } else {
-//                    todo : Couldn't find a Live Activity with id ...
-//                    reject("Couldn't ")
+                    reject(nil, "Couldn't end Activity. No Activity found matching id: \(activityId)", nil)
                 }
             }
         }
     }
     
-    @objc(update:withStateJSON:withResolver:withRejecter:)
-    func update(activityId: String, stateJSON: String, resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) -> Void {
+    @objc(update:withContentStateJSON:withResolver:withRejecter:)
+    func update(activityId: String, contentStateJSON: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
                 if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
                     return activity.id == activityId
                 }) {
-                    let updatedContentState = RNAKActivityAttributes.ContentState(jsonString: stateJSON)
+                    let updatedContentState = RNAKActivityAttributes.ContentState(jsonString: contentStateJSON)
 
                     await activity.update(using: updatedContentState)
                     
                     resolve(encodeActivityToString(activity: activity))
                 } else {
-//                    todo : Couldn't find a Live Activity with id ...
-//                    reject("Couldn't ")
+                    reject(nil, "Couldn't update Activity. No Activity found matching id: \(activityId)", nil)
                 }
             }
         }
