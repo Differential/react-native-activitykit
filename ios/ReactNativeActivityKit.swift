@@ -34,12 +34,12 @@ class ReactNativeActivityKit: NSObject {
     }
     
     @objc(request:withAttributesJSON:withResolver:withRejecter:)
-    func request(stateJSON: String, attributesJSON: String, resolve: RCTPromiseResolveBlock,reject: RCTPromiseRejectBlock) -> Void {
+    func request(contentStateJSON: String, attributesJSON: String, resolve: RCTPromiseResolveBlock,reject: RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             do {
                 let attributes = RNAKActivityAttributes(jsonString: attributesJSON)
-                let contentState = RNAKActivityAttributes.ContentState(jsonString: stateJSON)
+                let contentState = RNAKActivityAttributes.ContentState(jsonString: contentStateJSON)
                 
                 let activity = try Activity<RNAKActivityAttributes>.request(
                     attributes: attributes,
@@ -75,15 +75,15 @@ class ReactNativeActivityKit: NSObject {
         }
     }
     
-    @objc(update:withStateJSON:withResolver:withRejecter:)
-    func update(activityId: String, stateJSON: String, resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) -> Void {
+    @objc(update:withContentStateJSON:withResolver:withRejecter:)
+    func update(activityId: String, contentStateJSON: String, resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
                 if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
                     return activity.id == activityId
                 }) {
-                    let updatedContentState = RNAKActivityAttributes.ContentState(jsonString: stateJSON)
+                    let updatedContentState = RNAKActivityAttributes.ContentState(jsonString: contentStateJSON)
 
                     await activity.update(using: updatedContentState)
                     
