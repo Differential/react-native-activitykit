@@ -41,8 +41,17 @@ export function startActivity(
 export function updateActivity(
   identifier: string,
   state: Record<string, unknown>
-) {
-  ReactNativeActivityKit.update(identifier, JSON.stringify(state));
+): Promise<ActivityKitActivity> {
+  return ReactNativeActivityKit.update(
+    identifier,
+    JSON.stringify(state)
+  ).then((res: string) => {
+    try {
+      return JSON.parse(res)
+    } catch (e) {
+      throw new Error("[react-native-activitykit] Could not parse response from updateActivity")
+    }
+  });
 }
 
 export function endActivity(identifier: string): Promise<ActivityKitActivity> {
@@ -50,7 +59,7 @@ export function endActivity(identifier: string): Promise<ActivityKitActivity> {
     try {
       return JSON.parse(res)
     } catch (e) {
-      throw new Error("[react-native-activitykit] Could not parse response from startActivity")
+      throw new Error("[react-native-activitykit] Could not parse response from endActivity")
     }
   });
 }

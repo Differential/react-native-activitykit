@@ -12,7 +12,7 @@ public struct RNAKActivityAttributes: ActivityAttributes {
         self.jsonString = jsonString
     }
     
-    public typealias RNAKActivityAttributesStatus = ContentState
+    public typealias RNAKActivityAttributesContentState = ContentState
 
     // State : these are dynamic values that influence changes in the UI over the lifecycle of an activity
     public struct ContentState: Codable, Hashable {
@@ -24,6 +24,7 @@ public struct RNAKActivityAttributes: ActivityAttributes {
         
         public var json: JSONObject? {
             get {
+                print("jsonString: \(self.jsonString)")
                 do {
                     let jsonStringData = Data(self.jsonString.utf8)
                     let serialized = try JSONSerialization.jsonObject(with: jsonStringData, options: .mutableContainers) as! [String:Any]
@@ -43,6 +44,7 @@ public struct RNAKActivityAttributes: ActivityAttributes {
     public var json: JSONObject? {
         get {
             do {
+                print("jsonString: \(self.jsonString)")
                 if let jsonString = self.jsonString {
                     let jsonStringData = Data(jsonString.utf8)
                     let serialized = try JSONSerialization.jsonObject(with: jsonStringData, options: .mutableContainers) as! [String:Any]

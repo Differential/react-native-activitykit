@@ -35,9 +35,9 @@ struct ReactNativeActivityKitExampleWidget: Widget {
 //                                    orderStatus: .preparing)
         
         if let json = context.state.json,
-           let stateLabel = json["label"] as? String {
+           let stateLabel = json["status"] as? String {
           if let attr = context.attributes.json,
-            let attributeLabel = attr["label"] as? String {
+            let attributeLabel = attr["status"] as? String {
             VStack {
               Text(stateLabel)
               Text(attributeLabel)
