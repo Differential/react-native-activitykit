@@ -155,10 +155,7 @@
     ]
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.6",
     "eslint-plugin-react": "^7.31.10",
-    "eslint-plugin-react-native": "^4.0.0",
-    "react-redux": "^8.0.4",
-    "redux": "^4.2.0"
+    "eslint-plugin-react-native": "^4.0.0"
   }
 }

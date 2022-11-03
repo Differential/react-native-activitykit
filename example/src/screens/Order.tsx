@@ -61,7 +61,7 @@ const Order = ({
           <Button text={'Deliver order'} onPress={handleUpdate} />
         </View>
       )}
-      {status === 'delivering' && (
+      {status === 'preparing' && (
         <View style={styles.button}>
           <Button text={'Complete order'} onPress={handleEnd} />
         </View>

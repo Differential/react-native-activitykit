@@ -1,4 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
+import type { ActivityKitActivity } from './types'
 
 const LINKING_ERROR =
   `The package 'react-native-activitykit' doesn't seem to be linked. Make sure: \n\n` +
@@ -9,13 +10,13 @@ const LINKING_ERROR =
 const ReactNativeActivityKit = NativeModules.ReactNativeActivityKit
   ? NativeModules.ReactNativeActivityKit
   : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+    {},
+    {
+      get() {
+        throw new Error(LINKING_ERROR);
+      },
+    }
+  );
 
 export function multiply(a: number, b: number): Promise<number> {
   return ReactNativeActivityKit.multiply(a, b);
@@ -24,11 +25,17 @@ export function multiply(a: number, b: number): Promise<number> {
 export function startActivity(
   state: Record<string, unknown>,
   attributes: Record<string, unknown> = {}
-): string {
+): Promise<ActivityKitActivity> {
   return ReactNativeActivityKit.request(
     JSON.stringify(state),
     JSON.stringify(attributes)
-  );
+  ).then((res: string) => {
+    try {
+      return JSON.parse(res)
+    } catch (e) {
+      throw new Error("[react-native-activitykit] Could not parse response from startActivity")
+    }
+  });
 }
 
 export function updateActivity(
@@ -41,3 +48,5 @@ export function updateActivity(
 export function endActivity(identifier: string) {
   ReactNativeActivityKit.end(identifier);
 }
+
+export * from './types'

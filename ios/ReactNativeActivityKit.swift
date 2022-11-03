@@ -2,6 +2,21 @@ import Foundation
 import ActivityKit
 import ReactNativeActivityKitXC
 
+struct KeyValue: Encodable, Decodable {
+    var key: String
+    var value: String
+    
+    func toJSONString() -> String? {
+        do {
+            let encodedData = try JSONEncoder().encode(self)
+            return String(data: encodedData,
+                          encoding: .utf8)
+        } catch {
+            return nil
+        }
+    }
+}
+
 @objc(ReactNativeActivityKit)
 class ReactNativeActivityKit: NSObject {
 
@@ -10,8 +25,8 @@ class ReactNativeActivityKit: NSObject {
         resolve(a*b)
     }
     
-    @objc(request:attributesJSON:)
-    func request(stateJSON: String, attributesJSON: String) {
+    @objc(request:withAttributesJSON:withResolver:withRejecter:)
+    func request(stateJSON: String, attributesJSON: String, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             do {
@@ -23,24 +38,31 @@ class ReactNativeActivityKit: NSObject {
                     contentState: contentState,
                     pushType: nil)
                 
-                print("Starting a Live Activity")
+                // todo : figure out a better, more "Swifty" way to do this
+                let activityId = "\"id\":\"\(activity.id)\""
+                let state = "\"state\":\(stateJSON)"
+                let attrs = "\"attributes\":\(attributesJSON)"
+
+                resolve("{\(activityId),\(state),\(attrs)}")
             } catch (let error) {
                 print("Error requesting React Native ActivityKit Live Activity \(error.localizedDescription)")
                 print(error)
+                // code, message, error
+//                reject(<#String?#>, <#String?#>, <#Error?#>)
             }
         }
     }
     
-    @objc(end:)
-    func end(id: String) {
+    @objc(end:withResolver:withRejecter:)
+    func end(activityId: String, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
                 if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
-                    return activity.id == id
+                    return activity.id == activityId
                 }) {
-                    // todo : figure out how to support concurency here
-                    await activity.end()
+                    print("[RNAK] Ending Activity")
+                    await activity.end(dismissalPolicy: .immediate)
                 }
             }
         }

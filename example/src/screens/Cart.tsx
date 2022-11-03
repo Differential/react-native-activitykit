@@ -84,10 +84,11 @@ const Cart = () => {
   );
   const nextOrderId = orderIds.length > 0 ? Math.max(...orderIds) + 1 : 1;
 
-  const handleCheckout = () => {
-    const activityId = startActivity({ status: 'preparing' });
+  const handleCheckout = async () => {
+    const activity = await startActivity({ status: 'preparing' });
+    console.log({ activity })
     const order: Order = {
-      activityId,
+      activityId: activity.id,
       orderId: nextOrderId,
       items: cart,
       total: 20,
