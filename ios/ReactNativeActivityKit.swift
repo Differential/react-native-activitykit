@@ -59,10 +59,22 @@ class ReactNativeActivityKit: NSObject {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
-                if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
-                    return activity.id == activityId
-                }) {
-                    await activity.end(dismissalPolicy: .immediate)
+                if let activity = await self.findAndEndActivity(id: activityId, dismissalPolicy: .immediate) {
+                    resolve(encodeActivityToString(activity: activity))
+                } else {
+                    reject(nil, "Couldn't end Activity. No Activity found matching id: \(activityId)", nil)
+                }
+            }
+        }
+    }
+    
+    @objc(end:withDismissalPolicy:withResolver:withRejecter:)
+    func end(activityId: String, dismissalPolicy: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
+        // ActivtyKit is only available in iOS 16.1 or later
+        if #available(iOS 16.1, *) {
+            Task {
+                // todo : add an actual dismissal policy reference
+                if let activity = await self.findAndEndActivity(id: activityId, dismissalPolicy: .immediate) {
                     resolve(encodeActivityToString(activity: activity))
                 } else {
                     reject(nil, "Couldn't end Activity. No Activity found matching id: \(activityId)", nil)
@@ -89,5 +101,17 @@ class ReactNativeActivityKit: NSObject {
                 }
             }
         }
+    }
+    
+    @available(iOS 16.1, *)
+    func findAndEndActivity(id: String, dismissalPolicy: ActivityUIDismissalPolicy) async -> Activity<RNAKActivityAttributes>? {
+        if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
+            return activity.id == id
+        }) {
+            await activity.end(dismissalPolicy: dismissalPolicy)
+            return activity
+        }
+        
+        return nil
     }
 }

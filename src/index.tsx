@@ -55,7 +55,7 @@ export function updateActivity(
 }
 
 export function endActivity(identifier: string): Promise<ActivityKitActivity> {
-  return ReactNativeActivityKit.end(identifier).then((res: string) => {
+  return ReactNativeActivityKit.end(identifier, "default").then((res: string) => {
     try {
       return JSON.parse(res)
     } catch (e) {
