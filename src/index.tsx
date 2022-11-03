@@ -45,8 +45,14 @@ export function updateActivity(
   ReactNativeActivityKit.update(identifier, JSON.stringify(state));
 }
 
-export function endActivity(identifier: string) {
-  ReactNativeActivityKit.end(identifier);
+export function endActivity(identifier: string): Promise<ActivityKitActivity> {
+  return ReactNativeActivityKit.end(identifier).then((res: string) => {
+    try {
+      return JSON.parse(res)
+    } catch (e) {
+      throw new Error("[react-native-activitykit] Could not parse response from startActivity")
+    }
+  });
 }
 
 export * from './types'

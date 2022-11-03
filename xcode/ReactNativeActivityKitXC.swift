@@ -20,7 +20,7 @@ public struct RNAKActivityAttributes: ActivityAttributes {
             self.jsonString = jsonString
         }
         
-        private let jsonString: String
+        public let jsonString: String
         
         public var json: JSONObject? {
             get {
@@ -38,7 +38,7 @@ public struct RNAKActivityAttributes: ActivityAttributes {
     }
     
     // Attributes : these are static values established at the creation of the Activity
-    private let jsonString: String?
+    public let jsonString: String?
     
     public var json: JSONObject? {
         get {

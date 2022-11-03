@@ -2,19 +2,27 @@ import Foundation
 import ActivityKit
 import ReactNativeActivityKitXC
 
-struct KeyValue: Encodable, Decodable {
-    var key: String
-    var value: String
-    
-    func toJSONString() -> String? {
-        do {
-            let encodedData = try JSONEncoder().encode(self)
-            return String(data: encodedData,
-                          encoding: .utf8)
-        } catch {
-            return nil
-        }
+@available(iOS 16.1, *)
+func encodeActivityToString(activity: Activity<RNAKActivityAttributes>) -> String? {
+    do {
+        let encodedAttributes = try JSONEncoder().encode(activity.attributes.jsonString)
+        let attributesJSONString = String(data: encodedAttributes,
+                                          encoding: .utf8)
+        let encodedContentState = try JSONEncoder().encode(activity.contentState.jsonString)
+        let contentStateJSONString = String(data: encodedContentState,
+                                            encoding: .utf8)
+        
+        let activityIdKey = "\"id\":\"\(activity.id)\""
+        let attributesKey = "\"attributes\":\(attributesJSONString ?? "{}")"
+        let contentStateKey = "\"state\":\(contentStateJSONString ?? "{}")"
+        
+        
+        return"{\([activityIdKey, attributesKey, contentStateKey].joined(separator: ","))}"
+    } catch {
+        
     }
+    
+    return nil
 }
 
 @objc(ReactNativeActivityKit)
@@ -26,7 +34,7 @@ class ReactNativeActivityKit: NSObject {
     }
     
     @objc(request:withAttributesJSON:withResolver:withRejecter:)
-    func request(stateJSON: String, attributesJSON: String, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+    func request(stateJSON: String, attributesJSON: String, resolve: RCTPromiseResolveBlock,reject: RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             do {
@@ -39,11 +47,7 @@ class ReactNativeActivityKit: NSObject {
                     pushType: nil)
                 
                 // todo : figure out a better, more "Swifty" way to do this
-                let activityId = "\"id\":\"\(activity.id)\""
-                let state = "\"state\":\(stateJSON)"
-                let attrs = "\"attributes\":\(attributesJSON)"
-
-                resolve("{\(activityId),\(state),\(attrs)}")
+                resolve(encodeActivityToString(activity: activity))
             } catch (let error) {
                 print("Error requesting React Native ActivityKit Live Activity \(error.localizedDescription)")
                 print(error)
@@ -54,15 +58,18 @@ class ReactNativeActivityKit: NSObject {
     }
     
     @objc(end:withResolver:withRejecter:)
-    func end(activityId: String, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+    func end(activityId: String, resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
                 if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
                     return activity.id == activityId
                 }) {
-                    print("[RNAK] Ending Activity")
                     await activity.end(dismissalPolicy: .immediate)
+                    resolve(encodeActivityToString(activity: activity))
+                } else {
+//                    todo : Couldn't find a Live Activity with id ...
+//                    reject("Couldn't ")
                 }
             }
         }
