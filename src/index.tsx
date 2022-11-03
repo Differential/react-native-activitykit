@@ -23,11 +23,11 @@ export function multiply(a: number, b: number): Promise<number> {
 }
 
 export function startActivity(
-  state: Record<string, unknown>,
+  contentState: Record<string, unknown>,
   attributes: Record<string, unknown> = {}
 ): Promise<ActivityKitActivity> {
   return ReactNativeActivityKit.request(
-    JSON.stringify(state),
+    JSON.stringify(contentState),
     JSON.stringify(attributes)
   ).then((res: string) => {
     try {
@@ -40,11 +40,11 @@ export function startActivity(
 
 export function updateActivity(
   identifier: string,
-  state: Record<string, unknown>
+  contentState: Record<string, unknown>
 ): Promise<ActivityKitActivity> {
   return ReactNativeActivityKit.update(
     identifier,
-    JSON.stringify(state)
+    JSON.stringify(contentState)
   ).then((res: string) => {
     try {
       return JSON.parse(res)

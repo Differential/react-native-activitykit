@@ -3,7 +3,7 @@
 @interface RCT_EXTERN_MODULE(ReactNativeActivityKit, NSObject)
 
 RCT_EXTERN_METHOD(
-                  request:(NSString *)stateJSON
+                  request:(NSString *)contentStateJSON
                   withAttributesJSON:(NSString *)attributesJSON
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
@@ -15,7 +15,7 @@ RCT_EXTERN_METHOD(
 
 RCT_EXTERN_METHOD(
                   update:(NSString *)activityId
-                  withStateJSON:(NSString *)stateJSON
+                  withContentStateJSON:(NSString *)contentStateJSON
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)
 
