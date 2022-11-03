@@ -47,8 +47,9 @@ const Order = ({
   const handleUpdate = () => {
     updateActivity(activityId, { status: 'delivering' });
   };
-  const handleEnd = () => {
-    endActivity(activityId);
+  const handleEnd = async () => {
+    const activity = await endActivity(activityId);
+    console.log("End", { activity })
   };
 
   return (
@@ -61,7 +62,7 @@ const Order = ({
           <Button text={'Deliver order'} onPress={handleUpdate} />
         </View>
       )}
-      {status === 'delivering' && (
+      {status === 'preparing' && (
         <View style={styles.button}>
           <Button text={'Complete order'} onPress={handleEnd} />
         </View>

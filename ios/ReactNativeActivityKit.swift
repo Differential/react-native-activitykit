@@ -2,6 +2,29 @@ import Foundation
 import ActivityKit
 import ReactNativeActivityKitXC
 
+@available(iOS 16.1, *)
+func encodeActivityToString(activity: Activity<RNAKActivityAttributes>) -> String? {
+    do {
+        let encodedAttributes = try JSONEncoder().encode(activity.attributes.jsonString)
+        let attributesJSONString = String(data: encodedAttributes,
+                                          encoding: .utf8)
+        let encodedContentState = try JSONEncoder().encode(activity.contentState.jsonString)
+        let contentStateJSONString = String(data: encodedContentState,
+                                            encoding: .utf8)
+        
+        let activityIdKey = "\"id\":\"\(activity.id)\""
+        let attributesKey = "\"attributes\":\(attributesJSONString ?? "{}")"
+        let contentStateKey = "\"state\":\(contentStateJSONString ?? "{}")"
+        
+        
+        return"{\([activityIdKey, attributesKey, contentStateKey].joined(separator: ","))}"
+    } catch {
+        
+    }
+    
+    return nil
+}
+
 @objc(ReactNativeActivityKit)
 class ReactNativeActivityKit: NSObject {
 
@@ -10,8 +33,8 @@ class ReactNativeActivityKit: NSObject {
         resolve(a*b)
     }
     
-    @objc(request:attributesJSON:)
-    func request(stateJSON: String, attributesJSON: String) {
+    @objc(request:withAttributesJSON:withResolver:withRejecter:)
+    func request(stateJSON: String, attributesJSON: String, resolve: RCTPromiseResolveBlock,reject: RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             do {
@@ -23,23 +46,30 @@ class ReactNativeActivityKit: NSObject {
                     contentState: contentState,
                     pushType: nil)
                 
-                print("Starting a Live Activity")
+                // todo : figure out a better, more "Swifty" way to do this
+                resolve(encodeActivityToString(activity: activity))
             } catch (let error) {
                 print("Error requesting React Native ActivityKit Live Activity \(error.localizedDescription)")
                 print(error)
+                // code, message, error
+//                reject(<#String?#>, <#String?#>, <#Error?#>)
             }
         }
     }
     
-    @objc(end)
-    func end() {
+    @objc(end:withResolver:withRejecter:)
+    func end(activityId: String, resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
-                let activityStream = Activity<RNAKActivityAttributes>.activities
-                
-                for deliveryActivity in activityStream {
-                    await deliveryActivity.end()
+                if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
+                    return activity.id == activityId
+                }) {
+                    await activity.end(dismissalPolicy: .immediate)
+                    resolve(encodeActivityToString(activity: activity))
+                } else {
+//                    todo : Couldn't find a Live Activity with id ...
+//                    reject("Couldn't ")
                 }
             }
         }
