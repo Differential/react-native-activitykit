@@ -12,7 +12,7 @@ import {
 
 import pizzas, { Pizza as PizzaType } from '../data/pizzas';
 
-import { CartButton, Header } from '../components';
+import { CartButton, Header, HelperBox } from '../components';
 import theme from '../config/theme';
 
 const LIST_MARGIN = 14;
@@ -58,6 +58,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 20,
     top: 60,
+  },
+  helper: {
+    position: 'absolute',
+    bottom: 20,
+    alignSelf: 'center',
   },
 });
 
@@ -108,6 +113,9 @@ const PizzaList: React.FC = () => {
       />
       <View style={styles.cart}>
         <CartButton />
+      </View>
+      <View style={styles.helper}>
+        <HelperBox text={'Add a pizza to your cart to get started!'} />
       </View>
     </View>
   );
