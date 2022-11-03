@@ -11,6 +11,7 @@ import { Button } from '../components';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'space-between'
   },
   content: {
     marginTop: 20,
@@ -28,9 +29,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    position: 'absolute',
-    bottom: 100,
-    alignSelf: 'center',
+    marginBottom: 16
   },
 });
 
@@ -57,16 +56,14 @@ const Order = ({
       <View style={styles.content}>
         <Text style={styles.title}>{`Order #${orderId}`}</Text>
       </View>
-      {status === 'preparing' && (
-        <View style={styles.button}>
-          <Button text={'Deliver order'} onPress={handleUpdate} />
-        </View>
-      )}
-      {status === 'preparing' && (
+      <View>
         <View style={styles.button}>
           <Button text={'Complete order'} onPress={handleEnd} />
         </View>
-      )}
+        <View style={styles.button}>
+          <Button text={'Deliver order'} onPress={handleUpdate} />
+        </View>
+      </View>
       <TouchableOpacity
         style={styles.closeIcon}
         onPress={() => navigation.goBack()}

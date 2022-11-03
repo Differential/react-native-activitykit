@@ -74,4 +74,25 @@ class ReactNativeActivityKit: NSObject {
             }
         }
     }
+    
+    @objc(update:withStateJSON:withResolver:withRejecter:)
+    func update(activityId: String, stateJSON: String, resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) -> Void {
+        // ActivtyKit is only available in iOS 16.1 or later
+        if #available(iOS 16.1, *) {
+            Task {
+                if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
+                    return activity.id == activityId
+                }) {
+                    let updatedContentState = RNAKActivityAttributes.ContentState(jsonString: stateJSON)
+
+                    await activity.update(using: updatedContentState)
+                    
+                    resolve(encodeActivityToString(activity: activity))
+                } else {
+//                    todo : Couldn't find a Live Activity with id ...
+//                    reject("Couldn't ")
+                }
+            }
+        }
+    }
 }
