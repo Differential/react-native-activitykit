@@ -12,7 +12,7 @@ import {
 
 import pizzas, { Pizza as PizzaType } from '../data/pizzas';
 
-import { CartButton, Header, Pager } from '../components';
+import { CartButton, Header } from '../components';
 import theme from '../config/theme';
 
 const LIST_MARGIN = 14;
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     margin: LIST_MARGIN,
     height: '100%',
     width: '100%',
-    marginTop: 60,
   },
   cart: {
     position: 'absolute',
@@ -99,30 +98,14 @@ const PizzaList: React.FC = () => {
   return (
     <View style={styles.container}>
       <Header />
-      <Pager
-        pages={[
-          {
-            title: 'Pizzas',
-            content: (
-              <FlatList
-                contentContainerStyle={styles.listContainer}
-                data={pizzas}
-                renderItem={({ item }) =>
-                  renderPizza({ item, navigation, size: pizzaSize })
-                }
-                numColumns={2}
-              />
-            ),
-          },
-          {
-            title: 'Calzones',
-            content: <View />,
-          },
-        ]}
+      <FlatList
+        contentContainerStyle={styles.listContainer}
+        data={pizzas}
+        renderItem={({ item }) =>
+          renderPizza({ item, navigation, size: pizzaSize })
+        }
+        numColumns={2}
       />
-      <TouchableOpacity onPress={() => navigation.navigate('Pizza')}>
-        <Text>{'Login'}</Text>
-      </TouchableOpacity>
       <View style={styles.cart}>
         <CartButton />
       </View>
