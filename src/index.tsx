@@ -54,8 +54,10 @@ export function updateActivity(
   });
 }
 
-export function endActivity(identifier: string): Promise<ActivityKitActivity> {
-  return ReactNativeActivityKit.end(identifier, "default").then((res: string) => {
+// todo : I think that dismissalPolicies should be an enum. Gotta figure out how to handle that in TypeScript
+// todo : We still need to handle a final state object being passed in and also ending an Activity at a specific time (.date), so maybe "args" could be a better option here instead of a single prop?
+export function endActivity(identifier: string, dismissalPolicy: string = "default"): Promise<ActivityKitActivity> {
+  return ReactNativeActivityKit.end(identifier, dismissalPolicy).then((res: string) => {
     try {
       return JSON.parse(res)
     } catch (e) {

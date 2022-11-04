@@ -25,6 +25,12 @@ func encodeActivityToString(activity: Activity<RNAKActivityAttributes>) -> Strin
     return nil
 }
 
+@available(iOS 16.1, *)
+let ActivityDismissalPolicyMap: [String:ActivityUIDismissalPolicy] = [
+    "default": .default,
+    "immediate": .immediate
+]
+
 @objc(ReactNativeActivityKit)
 class ReactNativeActivityKit: NSObject {
 
@@ -59,7 +65,7 @@ class ReactNativeActivityKit: NSObject {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
-                if let activity = await self.findAndEndActivity(id: activityId, dismissalPolicy: .immediate) {
+                if let activity = await self.findAndEndActivity(id: activityId, dismissalPolicy: .default) {
                     resolve(encodeActivityToString(activity: activity))
                 } else {
                     reject(nil, "Couldn't end Activity. No Activity found matching id: \(activityId)", nil)
@@ -73,8 +79,8 @@ class ReactNativeActivityKit: NSObject {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
-                // todo : add an actual dismissal policy reference
-                if let activity = await self.findAndEndActivity(id: activityId, dismissalPolicy: .immediate) {
+                
+                if let activity = await self.findAndEndActivity(id: activityId, dismissalPolicy: ActivityDismissalPolicyMap[dismissalPolicy] ?? .default) {
                     resolve(encodeActivityToString(activity: activity))
                 } else {
                     reject(nil, "Couldn't end Activity. No Activity found matching id: \(activityId)", nil)
