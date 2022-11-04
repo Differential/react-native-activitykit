@@ -51,6 +51,11 @@ const Order = ({
     console.log("End", { activity })
   };
 
+  const handleCancel = async () => {
+    const activity = await endActivity(activityId, "immediate");
+    console.log("End", { activity })
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -58,10 +63,13 @@ const Order = ({
       </View>
       <View>
         <View style={styles.button}>
-          <Button text={'Complete order'} onPress={handleEnd} />
+          <Button text={'Deliver order'} onPress={handleUpdate} />
         </View>
         <View style={styles.button}>
-          <Button text={'Deliver order'} onPress={handleUpdate} />
+          <Button text={'Complete order (final Activity state)'} onPress={handleEnd} />
+        </View>
+        <View style={styles.button}>
+          <Button text={'Cancel order (hide immediately)'} onPress={handleCancel} />
         </View>
       </View>
       <TouchableOpacity
