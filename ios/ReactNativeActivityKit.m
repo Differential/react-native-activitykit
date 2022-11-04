@@ -15,6 +15,7 @@ RCT_EXTERN_METHOD(
 
 RCT_EXTERN_METHOD(
                   end:(NSString *)activityId
+                  withContentStateJSON:(NSString *)contentStateJSON
                   withDismissalPolicy:(NSString *)dismissalPolicy
                   withResolver:(RCTPromiseResolveBlock)resolve
                   withRejecter:(RCTPromiseRejectBlock)reject)

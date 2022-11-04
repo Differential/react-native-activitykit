@@ -14,7 +14,7 @@ func encodeActivityToString(activity: Activity<RNAKActivityAttributes>) -> Strin
         
         let activityIdKey = "\"id\":\"\(activity.id)\""
         let attributesKey = "\"attributes\":\(attributesJSONString ?? "{}")"
-        let contentStateKey = "\"state\":\(contentStateJSONString ?? "{}")"
+        let contentStateKey = "\"contentState\":\(contentStateJSONString ?? "{}")"
         
         
         return"{\([activityIdKey, attributesKey, contentStateKey].joined(separator: ","))}"
@@ -28,7 +28,7 @@ func encodeActivityToString(activity: Activity<RNAKActivityAttributes>) -> Strin
 @available(iOS 16.1, *)
 let ActivityDismissalPolicyMap: [String:ActivityUIDismissalPolicy] = [
     "default": .default,
-    "immediate": .immediate
+    "immediate": .immediate,
 ]
 
 @objc(ReactNativeActivityKit)
@@ -74,8 +74,8 @@ class ReactNativeActivityKit: NSObject {
         }
     }
     
-    @objc(end:withDismissalPolicy:withResolver:withRejecter:)
-    func end(activityId: String, dismissalPolicy: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
+    @objc(end:withContentStateJSON:withDismissalPolicy:withResolver:withRejecter:)
+    func end(activityId: String, contentStateJSON: String, dismissalPolicy: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {

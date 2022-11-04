@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { X as CloseIcon } from 'react-native-feather';
 
 import { useNavigation } from '@react-navigation/native';
-import { endActivity, updateActivity } from 'react-native-activitykit';
+import { endActivity, updateActivity, ActivityDismissalPolicies } from 'react-native-activitykit';
 
 import type { Order as OrderType } from '../config/types';
 import { Button } from '../components';
@@ -52,7 +52,9 @@ const Order = ({
   };
 
   const handleCancel = async () => {
-    const activity = await endActivity(activityId, "immediate");
+    const activity = await endActivity(activityId, {
+      dismissalPolicy: ActivityDismissalPolicies.immediate
+    });
     console.log("End", { activity })
   };
 
