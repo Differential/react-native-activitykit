@@ -40,7 +40,11 @@ class ReactNativeActivityKit: NSObject {
     }
     
     @objc(request:withAttributesJSON:withResolver:withRejecter:)
-    func request(contentStateJSON: String, attributesJSON: String, resolve: RCTPromiseResolveBlock,reject: RCTPromiseRejectBlock) -> Void {
+    func request(contentStateJSON: String,
+                 attributesJSON: String,
+                 resolve: RCTPromiseResolveBlock,
+                 reject: RCTPromiseRejectBlock
+    ) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             do {
@@ -61,7 +65,10 @@ class ReactNativeActivityKit: NSObject {
     }
     
     @objc(end:withResolver:withRejecter:)
-    func end(activityId: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
+    func end(activityId: String,
+             resolve: @escaping RCTPromiseResolveBlock,
+             reject: @escaping RCTPromiseRejectBlock
+    ) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
@@ -75,11 +82,15 @@ class ReactNativeActivityKit: NSObject {
     }
     
     @objc(end:withContentStateJSON:withDismissalPolicy:withResolver:withRejecter:)
-    func end(activityId: String, contentStateJSON: String, dismissalPolicy: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
+    func end(activityId: String,
+             contentStateJSON: String,
+             dismissalPolicy: String,
+             resolve: @escaping RCTPromiseResolveBlock,
+             reject: @escaping RCTPromiseRejectBlock
+    ) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
-                
                 if let activity = await self.findAndEndActivity(id: activityId,
                                                                 using: RNAKActivityAttributes.ContentState(jsonString: contentStateJSON),
                                                                 dismissalPolicy: ActivityDismissalPolicyMap[dismissalPolicy] ?? .default) {
@@ -91,8 +102,50 @@ class ReactNativeActivityKit: NSObject {
         }
     }
     
+    @objc(endAll:withDismissalPolicy:withResolver:withRejecter:)
+    func endAll(contentStateJSON: String,
+                dismissalPolicy: String,
+                resolve: @escaping RCTPromiseResolveBlock,
+                reject: @escaping RCTPromiseRejectBlock
+    ) -> Void {
+        // ActivtyKit is only available in iOS 16.1 or later
+        if #available(iOS 16.1, *) {
+            Task {
+                var finalActivities: [Activity<RNAKActivityAttributes>] = []
+                
+                for activity in Activity<RNAKActivityAttributes>.activities {
+                    if let activity = await self.findAndEndActivity(id: activity.id,
+                                                                    using: RNAKActivityAttributes.ContentState(jsonString: contentStateJSON),
+                                                                    dismissalPolicy: ActivityDismissalPolicyMap[dismissalPolicy] ?? .default) {
+                        finalActivities.append(activity)
+                    } else {
+                        reject(nil, "Couldn't end Activity in `endAll`. No Activity found matching id: \(activity.id)", nil)
+                    }
+                }
+                
+                let activitiesJSON: [String] = finalActivities.map { activity in
+                    return encodeActivityToString(activity: activity)!
+                }
+                
+                do {
+                    let encodedActivites = try JSONEncoder().encode(activitiesJSON)
+                    let activitiesJSONString = String(data: encodedActivites,
+                                                      encoding: .utf8)
+                    
+                    resolve(activitiesJSONString)
+                } catch {
+                    reject(nil, "Couldn't map all finished activities to return value", nil)
+                }
+            }
+        }
+    }
+    
     @objc(update:withContentStateJSON:withResolver:withRejecter:)
-    func update(activityId: String, contentStateJSON: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
+    func update(activityId: String,
+                contentStateJSON: String,
+                resolve: @escaping RCTPromiseResolveBlock,
+                reject: @escaping RCTPromiseRejectBlock
+    ) -> Void {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
