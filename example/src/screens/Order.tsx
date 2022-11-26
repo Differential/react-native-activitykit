@@ -47,7 +47,11 @@ const Order = ({
     updateActivity(activityId, { status: 'delivering' });
   };
   const handleEnd = async () => {
-    const activity = await endActivity(activityId);
+    const activity = await endActivity(activityId, {
+      finalContentState: {
+        status: "DELIVERED!"
+      }
+    });
     console.log("End", { activity })
   };
 
