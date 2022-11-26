@@ -14,7 +14,7 @@ func encodeActivityToString(activity: Activity<RNAKActivityAttributes>) -> Strin
         
         let activityIdKey = "\"id\":\"\(activity.id)\""
         let attributesKey = "\"attributes\":\(attributesJSONString ?? "{}")"
-        let contentStateKey = "\"state\":\(contentStateJSONString ?? "{}")"
+        let contentStateKey = "\"contentState\":\(contentStateJSONString ?? "{}")"
         
         
         return"{\([activityIdKey, attributesKey, contentStateKey].joined(separator: ","))}"
@@ -24,6 +24,12 @@ func encodeActivityToString(activity: Activity<RNAKActivityAttributes>) -> Strin
     
     return nil
 }
+
+@available(iOS 16.1, *)
+let ActivityDismissalPolicyMap: [String:ActivityUIDismissalPolicy] = [
+    "default": .default,
+    "immediate": .immediate,
+]
 
 @objc(ReactNativeActivityKit)
 class ReactNativeActivityKit: NSObject {
@@ -59,10 +65,24 @@ class ReactNativeActivityKit: NSObject {
         // ActivtyKit is only available in iOS 16.1 or later
         if #available(iOS 16.1, *) {
             Task {
-                if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
-                    return activity.id == activityId
-                }) {
-                    await activity.end(dismissalPolicy: .immediate)
+                if let activity = await self.findAndEndActivity(id: activityId, dismissalPolicy: .default) {
+                    resolve(encodeActivityToString(activity: activity))
+                } else {
+                    reject(nil, "Couldn't end Activity. No Activity found matching id: \(activityId)", nil)
+                }
+            }
+        }
+    }
+    
+    @objc(end:withContentStateJSON:withDismissalPolicy:withResolver:withRejecter:)
+    func end(activityId: String, contentStateJSON: String, dismissalPolicy: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
+        // ActivtyKit is only available in iOS 16.1 or later
+        if #available(iOS 16.1, *) {
+            Task {
+                
+                if let activity = await self.findAndEndActivity(id: activityId,
+                                                                using: RNAKActivityAttributes.ContentState(jsonString: contentStateJSON),
+                                                                dismissalPolicy: ActivityDismissalPolicyMap[dismissalPolicy] ?? .default) {
                     resolve(encodeActivityToString(activity: activity))
                 } else {
                     reject(nil, "Couldn't end Activity. No Activity found matching id: \(activityId)", nil)
@@ -89,5 +109,20 @@ class ReactNativeActivityKit: NSObject {
                 }
             }
         }
+    }
+    
+    @available(iOS 16.1, *)
+    func findAndEndActivity(id: String,
+                            using: Activity<RNAKActivityAttributes>.ContentState? = nil,
+                            dismissalPolicy: ActivityUIDismissalPolicy = .default
+    ) async -> Activity<RNAKActivityAttributes>? {
+        if let activity = Activity<RNAKActivityAttributes>.activities.first(where: { activity in
+            return activity.id == id
+        }) {
+            await activity.end(using: using, dismissalPolicy: dismissalPolicy)
+            return activity
+        }
+        
+        return nil
     }
 }

@@ -1,5 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
-import type { ActivityKitActivity } from './types'
+import type { ActivityKitActivity, EndActivityOptions, ActivityDismissalPolicy } from './types'
 
 const LINKING_ERROR =
   `The package 'react-native-activitykit' doesn't seem to be linked. Make sure: \n\n` +
@@ -54,14 +54,25 @@ export function updateActivity(
   });
 }
 
-export function endActivity(identifier: string): Promise<ActivityKitActivity> {
-  return ReactNativeActivityKit.end(identifier).then((res: string) => {
+// todo : I think that dismissalPolicies should be an enum. Gotta figure out how to handle that in TypeScript
+// todo : We still need to handle a final state object being passed in and also ending an Activity at a specific time (.date), so maybe "args" could be a better option here instead of a single prop?
+export function endActivity(identifier: string, options?: EndActivityOptions): Promise<ActivityKitActivity> {
+  const dismissalPolicy = options?.dismissalPolicy || "default"
+  const finalContentState = options?.finalContentState ? JSON.stringify(options.finalContentState) : ""
+
+  return ReactNativeActivityKit.end(identifier, finalContentState, dismissalPolicy).then((res: string) => {
     try {
       return JSON.parse(res)
     } catch (e) {
       throw new Error("[react-native-activitykit] Could not parse response from endActivity")
     }
   });
+}
+
+export const ActivityDismissalPolicies: Record<string, ActivityDismissalPolicy> = {
+  default: 'default',
+  immediate: 'immediate',
+  afterDate: 'afterDate'
 }
 
 export * from './types'
