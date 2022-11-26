@@ -69,6 +69,20 @@ export function endActivity(identifier: string, options?: EndActivityOptions): P
   });
 }
 
+export function endActivities(options?: EndActivityOptions): Promise<ActivityKitActivity[]> {
+  const dismissalPolicy = options?.dismissalPolicy || "default"
+  const finalContentState = options?.finalContentState ? JSON.stringify(options.finalContentState) : ""
+
+  return ReactNativeActivityKit.endAll(finalContentState, dismissalPolicy).then((res: string) => {
+    try {
+      const activities: string[] = JSON.parse(res)
+      return activities.map((activity: string) => JSON.parse(activity))
+    } catch (e) {
+      throw new Error("[react-native-activitykit] Could not parse response from endActivities")
+    }
+  });
+}
+
 export const ActivityDismissalPolicies: Record<string, ActivityDismissalPolicy> = {
   default: 'default',
   immediate: 'immediate',
