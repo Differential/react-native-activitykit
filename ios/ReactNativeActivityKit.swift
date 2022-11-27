@@ -33,11 +33,6 @@ let ActivityDismissalPolicyMap: [String:ActivityUIDismissalPolicy] = [
 
 @objc(ReactNativeActivityKit)
 class ReactNativeActivityKit: NSObject {
-
-    @objc(multiply:withB:withResolver:withRejecter:)
-    func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        resolve(a*b)
-    }
     
     @objc(request:withAttributesJSON:withResolver:withRejecter:)
     func request(contentStateJSON: String,

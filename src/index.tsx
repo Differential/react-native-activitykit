@@ -18,10 +18,6 @@ const ReactNativeActivityKit = NativeModules.ReactNativeActivityKit
     }
   );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return ReactNativeActivityKit.multiply(a, b);
-}
-
 export function startActivity(
   contentState: Record<string, unknown>,
   attributes: Record<string, unknown> = {}
