@@ -38,3 +38,4 @@ Put an `x` in all the items that apply, make notes next to any that haven't been
 - [ ] New and existing tests and linting pass locally with my changes
 - [ ] I have made corresponding changes to the documentation
 - [ ] The changes made adhere to the structure of Apple's [ActivityKit](https://developer.apple.com/documentation/activitykit) while following coding patterns established by [React](https://reactjs.org) and [React Native](https://reactnative.dev/)
+- [ ] I have edited/added the appropriate documentation to the doc site inside of the `website` directory
