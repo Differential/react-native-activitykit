@@ -22,10 +22,6 @@ const ReactNativeActivityKit = NativeModules.ReactNativeActivityKit
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return ReactNativeActivityKit.multiply(a, b);
-}
-
 /**
  * Starts a Live Activity. Wrapper for the Activity.request method from ActivityKit
  *
@@ -34,6 +30,7 @@ export function multiply(a: number, b: number): Promise<number> {
  * @returns {Promise<Object>} Activity that was started
  *
  */
+
 export function startActivity(
   contentState: Record<string, unknown>,
   attributes: Record<string, unknown> = {}
