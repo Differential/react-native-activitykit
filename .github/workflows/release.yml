@@ -1,10 +1,11 @@
 name: Release package
-  on:
-    workflow_dispatch:
-      inputs:
-        release-type:
-          description: 'Release type (one of): patch, minor, major'
-          required: true
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-type:
+        description: 'Release type (one of): patch, minor, major'
+        required: true
 
 jobs:
   build:
