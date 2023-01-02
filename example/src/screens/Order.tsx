@@ -3,7 +3,11 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { X as CloseIcon } from 'react-native-feather';
 
 import { useNavigation } from '@react-navigation/native';
-import { endActivity, updateActivity } from 'react-native-activitykit';
+import {
+  endActivity,
+  updateActivity,
+  ActivityDismissalPolicies,
+} from 'react-native-activitykit';
 
 import type { Order as OrderType } from '../config/types';
 import { Button, HelperBox } from '../components';
@@ -65,7 +69,18 @@ const Order = ({
     updateActivity(activityId, { status: 'delivering' });
   };
   const handleEnd = async () => {
-    const activity = await endActivity(activityId);
+    const activity = await endActivity(activityId, {
+      finalContentState: {
+        status: 'DELIVERED!',
+      },
+    });
+    console.log('End', { activity });
+  };
+
+  const handleCancel = async () => {
+    const activity = await endActivity(activityId, {
+      dismissalPolicy: ActivityDismissalPolicies.immediate,
+    });
     console.log('End', { activity });
   };
 
@@ -80,12 +95,22 @@ const Order = ({
         <Text>{`$${total}.00`}</Text>
         <Text>{status}</Text>
       </View>
-      <View style={styles.buttons}>
-        <Button text={'Complete'} onPress={handleEnd} />
-        <Button text={'Deliver'} onPress={handleUpdate} />
-      </View>
-      <View style={styles.helper}>
-        <HelperBox text={'Deliver your order!'} />
+      <View>
+        <View style={styles.button}>
+          <Button text={'Deliver order'} onPress={handleUpdate} />
+        </View>
+        <View style={styles.button}>
+          <Button
+            text={'Complete order (final Activity state)'}
+            onPress={handleEnd}
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            text={'Cancel order (hide immediately)'}
+            onPress={handleCancel}
+          />
+        </View>
       </View>
       <TouchableOpacity
         style={styles.closeIcon}
