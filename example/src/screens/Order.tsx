@@ -11,8 +11,8 @@ import {
 
 import type { Order as OrderType } from '../config/types';
 import { Button, HelperBox } from '../components';
-import { useAppDispatch } from '../store/hooks';
-import theme from '../config/theme';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { updateOrderStatus } from '../store/orders';
 
 const styles = StyleSheet.create({
   container: {
@@ -61,14 +61,36 @@ const Order = ({
 }: {
   route: { params: { order: OrderType } };
 }) => {
-  const { orderId, activityId, items, status, total } = order;
+  const { orderId, activityId, items, total } = order;
   const navigation = useNavigation();
   const dispatch = useAppDispatch();
+  const storedOrder = useAppSelector((state) =>
+    state.orders.orders.find((o) => o.orderId === orderId)
+  );
+
+  console.log(storedOrder);
+  const status = storedOrder?.status || 'preparing';
 
   const handleUpdate = () => {
+    const newOrder: OrderType = {
+      orderId,
+      activityId,
+      items,
+      status: 'delivering',
+      total,
+    };
+    dispatch(updateOrderStatus(newOrder));
     updateActivity(activityId, { status: 'delivering' });
   };
   const handleEnd = async () => {
+    const newOrder: OrderType = {
+      orderId,
+      activityId,
+      items,
+      status: 'completed',
+      total,
+    };
+    dispatch(updateOrderStatus(newOrder));
     const activity = await endActivity(activityId, {
       finalContentState: {
         status: 'DELIVERED!',

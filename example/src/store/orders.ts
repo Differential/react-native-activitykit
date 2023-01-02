@@ -24,6 +24,7 @@ export const orderSlice = createSlice({
       state.orders.push(action.payload);
     },
     updateOrderStatus: (state, action: PayloadAction<Order>) => {
+      console.log({ action });
       return {
         ...state,
         orders: state.orders.map((order) => {
