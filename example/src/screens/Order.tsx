@@ -35,11 +35,14 @@ const styles = StyleSheet.create({
     top: 50,
     right: 20,
   },
+  button: {
+    marginBottom: 16,
+  },
   buttons: {
     position: 'absolute',
     bottom: 100,
     alignSelf: 'center',
-    flexDirection: 'row',
+    // flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
@@ -68,7 +71,6 @@ const Order = ({
     state.orders.orders.find((o) => o.orderId === orderId)
   );
 
-  console.log(storedOrder);
   const status = storedOrder?.status || 'preparing';
 
   const handleUpdate = () => {
@@ -117,7 +119,7 @@ const Order = ({
         <Text>{`$${total}.00`}</Text>
         <Text>{status}</Text>
       </View>
-      <View>
+      <View style={styles.buttons}>
         <View style={styles.button}>
           <Button text={'Deliver order'} onPress={handleUpdate} />
         </View>

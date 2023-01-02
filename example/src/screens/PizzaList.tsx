@@ -9,6 +9,9 @@ import {
   Image,
   useWindowDimensions,
 } from 'react-native';
+import { useSelector } from 'react-redux';
+
+import type { CartState } from '../store/cart';
 
 import pizzas, { Pizza as PizzaType } from '../data/pizzas';
 
@@ -98,6 +101,13 @@ const renderPizza: React.FC<{
 
 const PizzaList: React.FC = () => {
   const navigation = useNavigation<any>();
+  const itemCount = useSelector(
+    (state: { cart: CartState }) => state.cart.cart.length
+  );
+  const helperText =
+    itemCount === 0
+      ? 'Add a pizza to your cart to get started!'
+      : 'Great! Now go to your cart to check out!';
   const { width } = useWindowDimensions();
   const pizzaSize = (width - LIST_MARGIN * 2 - ITEM_MARGIN * 4 - 8) / 2;
   return (
@@ -115,7 +125,7 @@ const PizzaList: React.FC = () => {
         <CartButton />
       </View>
       <View style={styles.helper}>
-        <HelperBox text={'Add a pizza to your cart to get started!'} />
+        <HelperBox text={helperText} />
       </View>
     </View>
   );

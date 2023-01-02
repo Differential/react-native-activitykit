@@ -10,7 +10,7 @@ import { X as CloseIcon } from 'react-native-feather';
 import { useAppSelector } from '../store/hooks';
 import { useNavigation } from '@react-navigation/native';
 
-import { endActivities } from 'react-native-activitykit'
+import { endActivities } from 'react-native-activitykit';
 import Name from '../../assets/images/name.svg';
 
 import type { Order } from '../config/types';
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     fontSize: 10,
     textAlign: 'center',
     opacity: 0.5,
-    padding: 16
-  }
+    padding: 16,
+  },
 });
 
 const renderItem = ({ item, navigation }: { item: Order; navigation: any }) => (
@@ -90,10 +90,10 @@ const Orders = () => {
 
   async function cancelAllOrders() {
     const activities = await endActivities({
-      dismissalPolicy: "immediate"
-    })
+      dismissalPolicy: 'immediate',
+    });
 
-    console.log("Cancel Orders", { activities })
+    console.log('Cancel Orders', { activities });
   }
 
   return (
@@ -110,9 +110,13 @@ const Orders = () => {
       </View>
       <View style={styles.list}>
         <FlatList
-          ListHeaderComponent={orders.length > 1 ? <TouchableOpacity onPress={cancelAllOrders}>
-            <Text style={styles.cancel}>Cancel All Orders</Text>
-          </TouchableOpacity> : null}
+          ListHeaderComponent={
+            orders.length > 1 ? (
+              <TouchableOpacity onPress={cancelAllOrders}>
+                <Text style={styles.cancel}>Cancel All Orders</Text>
+              </TouchableOpacity>
+            ) : null
+          }
           data={orders}
           renderItem={({ item }) => renderItem({ item, navigation })}
         />

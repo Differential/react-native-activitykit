@@ -4,7 +4,7 @@ import type { CartItem } from '../config/types';
 import type { RootState } from '../store';
 
 // Define a type for the slice state
-interface CartState {
+export interface CartState {
   cart: CartItem[];
 }
 
