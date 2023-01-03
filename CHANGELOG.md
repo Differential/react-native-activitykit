@@ -1,1 +1,0 @@
-This package is currently in alpha for public testing
