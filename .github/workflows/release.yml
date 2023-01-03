@@ -59,6 +59,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           title: "Release ${{ env.NEW_VERSION }}"
+          commit-message: "Release ${{ env.NEW_VERSION }}"
           branch: "release_${{ env.NEW_VERSION }}"
           delete-branch: true
           token: ${{ secrets.PAT }}
