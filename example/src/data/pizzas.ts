@@ -11,21 +11,6 @@ const pizzas: Pizza[] = [
     title: 'Classic Pepperoni',
     description: '14" pizza with our famous pepperoni cups',
   },
-  {
-    _id: '2',
-    title: 'Build your own',
-    description: '14" pizza with our famous pepperoni cups',
-  },
-  {
-    _id: '3',
-    title: 'Hawaiian',
-    description: '14" pizza with our famous pepperoni cups',
-  },
-  {
-    _id: '4',
-    title: 'Veggie',
-    description: '14" pizza with our famous pepperoni cups',
-  },
 ].map((pizza) => ({
   ...pizza,
   // Generate a random AI-generated image for the pizza

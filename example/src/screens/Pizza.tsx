@@ -4,9 +4,10 @@ import {
   Text,
   StyleSheet,
   Image,
-  TouchableOpacity,
+  TouchableWithoutFeedback,
   FlatList,
   GestureResponderEvent,
+  TouchableOpacity,
 } from 'react-native';
 import { X as CloseIcon } from 'react-native-feather';
 
@@ -20,7 +21,7 @@ import type {
   Topping as ToppingType,
 } from '../config/types';
 import toppings from '../data/toppings';
-import { Button, Checkbox, Pager } from '../components';
+import { Button, Checkbox, HelperBox } from '../components';
 import { useAppDispatch } from '../store/hooks';
 import theme from '../config/theme';
 
@@ -72,6 +73,11 @@ const styles = StyleSheet.create({
     bottom: 100,
     alignSelf: 'center',
   },
+  helper: {
+    position: 'absolute',
+    bottom: 160,
+    alignSelf: 'center',
+  },
 });
 
 const PIZZA_CLOSEUP =
@@ -94,12 +100,12 @@ const renderTopping: React.FC<{
   onPress: (event: GestureResponderEvent) => void;
 }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.topping}>
         <Text style={styles.toppingText}>{item.name}</Text>
         <Checkbox checked={item.selected} />
       </View>
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   );
 };
 
@@ -159,31 +165,21 @@ const Pizza = ({
         <Text style={styles.description}>{description}</Text>
       </View>
       <View style={styles.list}>
-        <Pager
-          pages={[
-            {
-              title: 'Toppings',
-              content: (
-                <FlatList
-                  data={toppingsList}
-                  renderItem={({ item }) =>
-                    renderTopping({
-                      item,
-                      onPress: () => toggleOption(item.name),
-                    })
-                  }
-                />
-              ),
-            },
-            {
-              title: 'Reviews',
-              content: <View />,
-            },
-          ]}
+        <FlatList
+          data={toppingsList}
+          renderItem={({ item }) =>
+            renderTopping({
+              item,
+              onPress: () => toggleOption(item.name),
+            })
+          }
         />
       </View>
       <View style={styles.button}>
         <Button text={'Add to cart'} onPress={handleAddToCart} />
+      </View>
+      <View style={styles.helper}>
+        <HelperBox text={'Click Add To Cart to start your order!'} />
       </View>
       <TouchableOpacity
         style={styles.closeIcon}

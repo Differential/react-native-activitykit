@@ -9,10 +9,13 @@ import {
   Image,
   useWindowDimensions,
 } from 'react-native';
+import { useSelector } from 'react-redux';
+
+import type { CartState } from '../store/cart';
 
 import pizzas, { Pizza as PizzaType } from '../data/pizzas';
 
-import { CartButton, Header, Pager } from '../components';
+import { CartButton, Header, HelperBox } from '../components';
 import theme from '../config/theme';
 
 const LIST_MARGIN = 14;
@@ -53,12 +56,16 @@ const styles = StyleSheet.create({
     margin: LIST_MARGIN,
     height: '100%',
     width: '100%',
-    marginTop: 60,
   },
   cart: {
     position: 'absolute',
     right: 20,
     top: 60,
+  },
+  helper: {
+    position: 'absolute',
+    bottom: 20,
+    alignSelf: 'center',
   },
 });
 
@@ -94,37 +101,31 @@ const renderPizza: React.FC<{
 
 const PizzaList: React.FC = () => {
   const navigation = useNavigation<any>();
+  const itemCount = useSelector(
+    (state: { cart: CartState }) => state.cart.cart.length
+  );
+  const helperText =
+    itemCount === 0
+      ? 'Add a pizza to your cart to get started!'
+      : 'Great! Now go to your cart to check out!';
   const { width } = useWindowDimensions();
   const pizzaSize = (width - LIST_MARGIN * 2 - ITEM_MARGIN * 4 - 8) / 2;
   return (
     <View style={styles.container}>
       <Header />
-      <Pager
-        pages={[
-          {
-            title: 'Pizzas',
-            content: (
-              <FlatList
-                contentContainerStyle={styles.listContainer}
-                data={pizzas}
-                renderItem={({ item }) =>
-                  renderPizza({ item, navigation, size: pizzaSize })
-                }
-                numColumns={2}
-              />
-            ),
-          },
-          {
-            title: 'Calzones',
-            content: <View />,
-          },
-        ]}
+      <FlatList
+        contentContainerStyle={styles.listContainer}
+        data={pizzas}
+        renderItem={({ item }) =>
+          renderPizza({ item, navigation, size: pizzaSize })
+        }
+        numColumns={2}
       />
-      <TouchableOpacity onPress={() => navigation.navigate('Pizza')}>
-        <Text>{'Login'}</Text>
-      </TouchableOpacity>
       <View style={styles.cart}>
         <CartButton />
+      </View>
+      <View style={styles.helper}>
+        <HelperBox text={helperText} />
       </View>
     </View>
   );
