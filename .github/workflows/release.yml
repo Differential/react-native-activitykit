@@ -63,6 +63,15 @@ jobs:
           delete-branch: true
           token: ${{ secrets.PAT }}
 
+      # Enable automerge for PR
+      - name: Enable automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          token: ${{ secrets.PAT }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
+
       # Automatically approve PR
       - name: Auto approve
         if: steps.cpr.outputs.pull-request-operation == 'created'
@@ -70,15 +79,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           number: ${{ steps.cpr.outputs.pull-request-number }}
-
-      # Automatically merge PR
-      - name: Automerge Pull Request
-        if: steps.cpr.outputs.pull-request-operation == 'created'
-        uses: peter-evans/enable-pull-request-automerge@v2
-        with:
-          token: ${{ secrets.PAT }}
-          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-          merge-method: squash
 
       # # Publish version to public repository
       # - name: Publish
